@@ -1,0 +1,627 @@
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Manage legal aid cases",
+  serviceUrl: "/v1/home/new",
+  classes: "govuk-header--full-width-border",
+  navigation: [
+    {
+      href: "#1",
+      text: "Username",
+      active: true
+    },
+    {
+      href: "#2",
+      text: "Sign out"
+    }
+  ]
+}) }}
+
+
+{{ govukServiceNavigation({
+  navigation: [
+    {
+      href: "#",
+      text: "Appointments",
+      active: true
+    },
+    {
+      href: "/Provider/provider_cases",
+      text: "Cases"
+    },
+    {
+      href: "/Provider/provider_claims",
+        text: "Claims"
+      },
+      {
+        href: "#",
+        text: "Search"
+      }
+  ]
+}) }}
+  {% endblock %}
+
+  {% block content %}
+
+  <h1 class="govuk-heading-xl">Appointments</h1>
+
+  {%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+
+  {{ mojSubNavigation({
+    label: 'Sub navigation',
+    items: [{
+      text: 'Today',
+      href: '#1',
+      active: true
+    }, {
+      text: 'Tomorrow',
+      href: '#2'
+    }, {
+      text: 'All',
+      href: '#3'
+    }]
+  }) }}
+
+
+    <table class="govuk-table" data-module="moj-sortable-table">
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="0">Reference</button></th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1">Name</button></th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="2">Date</button></th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="3">Time</button></th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="4">Allocated to</button></th>
+
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none"><button type="button" data-index="5">Status</button></th>
+
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell"><a href="appointment_details.html" class="govuk-link">GHI-4567</a></td>
+
+          <td class="govuk-table__cell">Mohammed Khan</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">Mon 2 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="9">9am</td>
+
+          <td class="govuk-table__cell">-</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="3">
+            <strong class="govuk-tag govuk-tag--blue">
+              New
+            </strong>
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">STU-3406</td>
+
+          <td class="govuk-table__cell" tabindex="1">Aisha Patel</td>
+
+          <td class="govuk-table__cell" data-sort-value="5">Mon 2 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="10">10am</td>
+
+          <td class="govuk-table__cell">Adviser 1</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1"><strong class="govuk-tag govuk-tag--red">
+            Urgent
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">STU-3303</td>
+
+          <td class="govuk-table__cell">David Wilson</td>
+
+          <td class="govuk-table__cell" data-sort-value="6">Tues 3 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="11">2pm</td>
+
+          <td class="govuk-table__cell">Adviser 1</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="6"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">S504-3456</td>
+
+          <td class="govuk-table__cell">Jamal Thompson</td>
+
+          <td class="govuk-table__cell" data-sort-value="3">Mon 2 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="11">9am</td>
+
+          <td class="govuk-table__cell">Adviser 1</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">STU-3456</td>
+
+          <td class="govuk-table__cell">Grace Wong</td>
+
+          <td class="govuk-table__cell" data-sort-value="3">Mon 2 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="13">4pm</td>
+
+          <td class="govuk-table__cell">-</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="5"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">STU-3456</td>
+
+          <td class="govuk-table__cell">Rohan Singh</td>
+
+          <td class="govuk-table__cell" data-sort-value="2">Thurs 5 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="11">9am</td>
+
+          <td class="govuk-table__cell">Adviser 1</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">STU-3456</td>
+
+          <td class="govuk-table__cell">Emily Johnson</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Weds 4 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">10am</td>
+
+          <td class="govuk-table__cell">Adviser 1</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">KJL-23456</td>
+
+          <td class="govuk-table__cell">James Smith</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Mon 2 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">1pm</td>
+
+          <td class="govuk-table__cell">Adviser 2</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">XYZ-45678</td>
+
+          <td class="govuk-table__cell">Sarah Brown</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Mon 2 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">2pm</td>
+
+          <td class="govuk-table__cell">Adviser 1</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">XYZ-45678</td>
+
+          <td class="govuk-table__cell">David Patel</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Mon 2 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">5pm</td>
+
+          <td class="govuk-table__cell">Adviser 2</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">MNO-78901</td>
+
+          <td class="govuk-table__cell">Emily Jones</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Tues 3 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">10am</td>
+
+          <td class="govuk-table__cell">Adviser 1</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">VWX-12345</td>
+
+          <td class="govuk-table__cell">John Murphy</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Tues 3 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">11am</td>
+
+          <td class="govuk-table__cell">Adviser 2</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">RST-56789</td>
+
+          <td class="govuk-table__cell">Olivia Wilson</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Tues 3 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">12pm</td>
+
+          <td class="govuk-table__cell">-</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">CDE-89012</td>
+
+          <td class="govuk-table__cell">Daniel Singh</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Tues 3 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">2pm</td>
+
+          <td class="govuk-table__cell">-</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">NOP-34567</td>
+
+          <td class="govuk-table__cell">Charlotte Taylor</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Tues 3 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">3pm</td>
+
+          <td class="govuk-table__cell">-</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">HIJ-67890</td>
+
+          <td class="govuk-table__cell">William Davies</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Weds 4 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">12pm</td>
+
+          <td class="govuk-table__cell">-</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">KLM-23456</td>
+
+          <td class="govuk-table__cell">Isabella Ahmed</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Thurs 5 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">10am</td>
+
+          <td class="govuk-table__cell">-</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">UVW-45678</td>
+
+          <td class="govuk-table__cell">Sophia Campbell</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Thurs 5 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">11am</td>
+
+          <td class="govuk-table__cell">Adviser 1</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">UVW-45678</td>
+
+          <td class="govuk-table__cell">Ahmed Ibrahim</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Thurs 5 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">11am</td>
+
+          <td class="govuk-table__cell">Adviser 2</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">QRS-78901</td>
+
+          <td class="govuk-table__cell">Jacob Chen</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Thurs 5 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">11am</td>
+
+          <td class="govuk-table__cell">NA</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">EFG-12345</td>
+
+          <td class="govuk-table__cell">Freya Patel</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Thurs 5 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">3pm</td>
+
+          <td class="govuk-table__cell">Adviser 1</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">GHI-56789</td>
+
+          <td class="govuk-table__cell">Adam Jones</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Thurs 5 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">3pm</td>
+
+          <td class="govuk-table__cell">Adviser 2</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">TUV-89012</td>
+
+          <td class="govuk-table__cell">Isabella Patel</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Thurs 5 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">4pm</td>
+
+          <td class="govuk-table__cell">Adviser 2</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">ABC-34567</td>
+
+          <td class="govuk-table__cell">Mia Brown</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Fri 6 Oct 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">11am</td>
+
+          <td class="govuk-table__cell">Adviser 1</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">PQR-67890</td>
+
+          <td class="govuk-table__cell">Michael Johnson</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Mon 2 Nov 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">9am</td>
+
+          <td class="govuk-table__cell">Adviser 1</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">BCD-23456</td>
+
+          <td class="govuk-table__cell">Jim Van de Ban</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Mon 2 Nov 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">9am</td>
+
+          <td class="govuk-table__cell">Adviser 2</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">STU-45678</td>
+
+          <td class="govuk-table__cell">Sascha Rose Dunn</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Mon 2 Nov 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">10am</td>
+
+          <td class="govuk-table__cell">-</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            Urgent
+          </strong>
+        </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <td class="govuk-table__cell">DEF-78901</td>
+
+          <td class="govuk-table__cell">Radika Ihyer</td>
+
+          <td class="govuk-table__cell" data-sort-value="1">Mon 2 Nov 23</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">11am</td>
+
+          <td class="govuk-table__cell">-</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4"><strong class="govuk-tag govuk-tag--blue">
+            New
+          </strong>
+        </td>
+
+        </tr>
+      </tbody>
+    </table>
+  <div aria-live="polite" role="status" aria-atomic="true" class="govuk-visually-hidden"></div></div>
+
+  {% endblock %}

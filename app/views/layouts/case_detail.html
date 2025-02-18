@@ -1,0 +1,33 @@
+
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block backlink %}
+
+{{ govukBackLink({
+  text: "Back to appointments",
+  href: "/Provider/provider_appointments.html"
+}) }}
+
+
+{% endblock%}
+
+<!---Accepted Tag-->
+<!-- 
+{% block tag %}
+
+<div><strong class="govuk-tag govuk-!-margin-bottom-2 govuk-!-margin-top-4">First appointment</strong></div>
+
+{% endblock %} -->
+
+<!---Name & Case number-->
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-1 govuk-!-margin-top-4">
+  <span class="govuk-caption-xl ">PC-4950-9422</span>
+  David Johnson
+</h1>
+
+{% endblock %}

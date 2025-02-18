@@ -1,0 +1,114 @@
+{% extends "/layouts/case_detail.html" %}
+
+{% block pageTitle %}
+  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-m">Appointment details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9" id="field-list-outgoings">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Appointment time</dt>
+          <dd class="govuk-summary-list__value">10am</dd>
+          <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Appointment date</dt>
+          <dd class="govuk-summary-list__value">Mon 2 Oct</dd>
+          <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Reference number</dt>
+          <dd class="govuk-summary-list__value">PC-4950-9422</dd>
+          <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Date of appointment request</dt>
+          <dd class="govuk-summary-list__value">Fri 29 Sep</dd>
+          <dd class="govuk-summary-list__actions"></dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Contact details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9" id="field-list-outgoings">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Phone number</dt>
+          <dd class="govuk-summary-list__value">07592 020839</dd>
+          <dd class="govuk-summary-list__actions"></dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Client eligibility</h2>
+
+      {% set completedStatus = {
+        text: "Eligible"
+      } %}
+
+      {% set incompleteStatus = {
+        tag: {
+          text: "Incomplete",
+          classes: "govuk-tag--blue"
+        }
+      } %}
+
+
+      {% set eligibleStatus = {
+        tag: {
+          text: "Eligible",
+          classes: "govuk-tag--green"
+        }
+      } %}
+
+      {# To switch between the completed and incomplete statues, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
+
+      {{ govukTaskList({
+        idPrefix: "first-section",
+        items: [
+          {
+            title: {
+              text: "Financial eligibility"
+            },
+            href: "#",
+            status: eligibleStatus
+          },
+          {
+            title: {
+              text: "Scope"
+            },
+            href: "#",
+            status: eligibleStatus
+          },
+          {
+            title: {
+              text: "Merit"
+            },
+            href: "#",
+            status: incompleteStatus
+          }
+        ]
+      }) }}
+
+      
+<div class="govuk-button-group govuk-!-margin-top-9">
+  {{ govukButton({
+    text: "Review and submit application",
+    href: "provider_submitted.html"
+  }) }}
+
+  {{ govukButton({
+    text: "Reject case",
+    classes: "govuk-button--secondary"
+  }) }}
+</div>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,167 @@
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Manage legal aid cases",
+  serviceUrl: "/v1/home/new",
+  classes: "govuk-header--full-width-border",
+  navigation: [
+    {
+      href: "#1",
+      text: "Username",
+      active: true
+    },
+    {
+      href: "#2",
+      text: "Sign out"
+    }
+  ]
+}) }}
+
+
+{{ govukServiceNavigation({
+  navigation: [
+    {
+      href: "/Provider/provider_appointments",
+      text: "Appointments"
+     
+    },
+    {
+      href: "/Provider/provider_cases",
+      text: "Cases"
+    },
+    {
+      href: "/Provider/provider_claims",
+        text: "Claims",
+        active: true
+      },
+      {
+        href: "#",
+        text: "Search"
+      }
+  ]
+}) }}
+  {% endblock %}
+
+  {% block content %}
+
+
+  <h1 class="govuk-heading-xl">Claims</h1>
+
+
+  {{ mojSubNavigation({
+    label: 'Sub navigation',
+    items: [{
+      text: 'Submitted',
+      href: '#1',
+      active: true
+    }, {
+      text: 'Paid',
+      href: '#2'
+    } ]
+  }) }}
+
+
+
+ 
+
+    <table class="govuk-table" data-module="moj-sortable-table">
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="0">Reference</button></th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1">Name</button></th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="2">Date submitted</button></th>
+
+      
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none"><button type="button" data-index="5">Status</button></th>
+
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="case_details.html" class="govuk-link">PC-4950-9422</a></td>
+
+          <td class="govuk-table__cell">Mohammed Khan</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">Mon 2 Oct 23</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="3">
+            <strong class="govuk-tag govuk-tag--blue">
+              In progress
+            </strong>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">STU-3303</td>
+
+          <td class="govuk-table__cell">Mohammed Khan</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">Mon 2 Oct 23</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="3">
+            <strong class="govuk-tag govuk-tag--blue">
+              In progress
+            </strong>
+          </td>
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">STU-3303</td>
+
+          <td class="govuk-table__cell">Mohammed Khan</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">Mon 2 Oct 23</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="3">
+            <strong class="govuk-tag govuk-tag--red">
+             Requires more evidence
+            </strong>
+          </td>
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">STU-3303</td>
+
+          <td class="govuk-table__cell">Mohammed Khan</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">Mon 2 Oct 23</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="3">
+            <strong class="govuk-tag govuk-tag--blue">
+              In progress
+            </strong>
+          </td>
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">STU-3303</td>
+          <td class="govuk-table__cell">Mohammed Khan</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">Mon 2 Oct 23</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="3">
+            <strong class="govuk-tag govuk-tag--blue">
+              In progress
+            </strong>
+          </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+  <div aria-live="polite" role="status" aria-atomic="true" class="govuk-visually-hidden"></div></div>
+
+  {% endblock %}

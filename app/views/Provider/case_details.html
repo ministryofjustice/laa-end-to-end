@@ -1,0 +1,262 @@
+{% extends "/layouts/case_detail.html" %}
+
+{% block pageTitle %}
+  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% block backlink %}
+
+{{ govukBackLink({
+  text: "Back to cases",
+  href: "/Provider/provider_cases.html"
+}) }}
+
+{% endblock%}
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-1 govuk-!-margin-top-4">
+  <span class="govuk-caption-xl ">PC-4950-9422</span>
+  David Johnson
+</h1>
+
+
+
+{% endblock%}
+
+{% block content %}
+
+
+
+
+
+
+<h2 class="govuk-heading-s"> Case actions </h2>
+
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Record outcome",
+    href: "../../accepted/case1/clientdetails.html"
+  }) }}
+
+  {{ govukButton({
+    text: "Apply for prior authority for disbursment",
+    classes: "govuk-button--secondary"
+  }) }}
+
+  {{ govukButton({
+      text: "Add additional proceeding",
+      classes: "govuk-button--secondary",
+      href: "{{version}}../../../../../case_actions/split_areaOfLaw"
+  }) }}
+
+  {{ govukButton({
+      text: "Apply for extension of upper limits",
+      classes: "govuk-button--secondary"
+  }) }}
+
+</div>
+
+<h2 class="govuk-heading-s"> Billing actions </h2>
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Submit claim",
+    href: "../../accepted/case1/clientdetails.html"
+  }) }}
+
+
+
+</div>
+
+
+
+{{ mojSubNavigation({
+  label: 'Sub navigation',
+  items: [{
+    text: 'Case details',
+    href: '#1',
+    active: true
+  }, {
+    text: 'Client details',
+    href: '#2'
+  }, {
+    text: 'Evidence',
+    href: '#3'
+  },
+  {
+    text: 'Messages',
+    href: '#4'
+  },
+  {
+    text: 'Application History',
+    href: '#5'
+  },
+  {
+    text: 'Related cases',
+    href: '#5'
+  }
+  ]
+}) }}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m">Case details</h2>
+
+<!-- Client details-->
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Incident details"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "
+        When did your client contact you about the latest domestic abuse incident?"
+      },
+      value: {
+        html: "10 Dec 201"
+      },
+      actions: {
+        items: [
+          {
+            href: "../../../change_answer/client_details/client_name.html",
+            text: "Change",
+            visuallyHiddenText: "age"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "When did the incident occur?"
+      },
+      value: {
+        html: "08 Dec 2021"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "nationality"
+          }
+        ]
+      }
+    }
+
+    
+  ]
+}) }}
+
+<!--Contact-->
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Opponent details"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: " Rex Smith"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "whether details are known"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Does the opponent have the mental capacity to understand the terms of a court order?"
+      },
+      value: {
+        html: "Yes" 
+      },
+      actions: {
+        items: [
+          {
+            href:  "#",
+            text: "Change",
+            visuallyHiddenText: "change phone number"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Has a warning letter been sent to the opponent?"
+      },
+      value: {
+        html: "Yes" 
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "age"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Have the police been notified?"
+      },
+      value: {
+        html: "Yes" 
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "working situation"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Have bail conditions been set?"
+      },
+      value: {
+        html: "Yes" 
+      },
+      actions: {
+        items: [
+          {
+            href: "../../../change_answer/contact_details/client_additionalinformation.html",
+            text: "Change",
+            visuallyHiddenText: "working situation"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+
+
+</div>
+</div>
+{% endblock %}
