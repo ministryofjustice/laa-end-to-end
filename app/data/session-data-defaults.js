@@ -1,5 +1,5 @@
 module.exports = {
 
-  // Insert values here
+  'financiallyEligible':'No',
 
 }

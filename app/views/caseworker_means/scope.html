@@ -1,0 +1,158 @@
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Assess client eligibility",
+  serviceUrl: "/",
+  classes: "govuk-header--full-width-border",
+  navigation: [
+    {
+      href: "#1",
+      text: "Caseworker Username",
+      active: true
+    },
+    {
+      href: "#2",
+      text: "Sign out"
+    }
+  ]
+}) }}
+
+  {% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block backlink %}
+
+{{ govukBackLink({
+  text: "Back to cases",
+  href: "/caseworker_means/cases.html"
+}) }}
+
+
+{% endblock%}
+
+
+<!---Name & Case number-->
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-1 govuk-!-margin-top-4">
+  <span class="govuk-caption-xl ">PC-4950-9422</span>
+  David Johnson
+</h1>
+
+{% endblock %}
+{% block content %}
+
+
+{{ mojSubNavigation({
+    label: 'Sub navigation',
+    items: [{
+      text: 'Client details',
+      href: '/caseworker_means/client_details'
+    }, {
+        text: 'Financial eligibility',
+        href: '/caseworker_means/financial_eligibility'
+    }, {
+      text: 'Scope',
+      href: '/caseworker_means/scope',
+      active: true
+    },
+    {
+      text: 'Messages',
+      href: '#4'
+    },
+    {
+      text: 'Evidence',
+      href: '#5'
+    }
+    ]
+  }) }}
+  
+  
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h2 class="govuk-heading-m">Scope</h2>
+
+  
+     
+
+
+<h2 class="govuk-heading-s govuk-!-margin-bottom-2">Dermination: 
+  
+  <!--if in scope category-->
+ 
+    <strong class="govuk-tag govuk-tag--green">
+     In scope
+    </strong></h2>
+
+  
+
+<h2 class="govuk-heading-s govuk-!-margin-bottom-7">Category of law: <span class="govuk-body-m">Discrimination </span></h2>
+
+
+
+ <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper">
+      <h2 class="govuk-summary-card__title">
+        Scope details
+      </h2>
+      <ul class="govuk-summary-card__actions">
+        <li class="govuk-summary-card__action">
+          <a class="govuk-link" href="../../../change_answer/scope/scope_overview.html">Change<span class="govuk-visually-hidden"> change scope</span></a>
+        </li>
+      </ul>
+    </div>
+    <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Area
+          </dt>
+          <dd class="govuk-summary-list__value">
+           Discrimination
+          </dd>
+        </div>
+
+        <!--show the following rows only if Discrimination selected-->
+
+       
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Type of discrimination
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Direct discrimination
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Basis of discrimination
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Age
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Where the discrimination occured
+          </dt>
+          <dd class="govuk-summary-list__value">
+            In the workplace
+          </dd>
+        </div>
+
+
+
+      </dl>
+    </div>
+  </div>
+
+  
+
+
+  {% endblock %}

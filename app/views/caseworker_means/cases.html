@@ -1,0 +1,160 @@
+
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Assess client eligibility",
+  serviceUrl: "/",
+  classes: "govuk-header--full-width-border",
+  navigation: [
+    {
+      href: "#1",
+      text: "Caseworker Username",
+      active: true
+    },
+    {
+      href: "#2",
+      text: "Sign out"
+    }
+  ]
+}) }}
+
+
+
+
+
+{{ govukServiceNavigation({
+  navigation: [
+    {
+      href: "/caseworker_means/cases",
+      text: "Cases",
+      active: true
+    },
+      {
+        href: "#",
+        text: "Search"
+      }
+  ]
+}) }}
+  {% endblock %}
+
+ 
+
+
+  {% block content %}
+
+  <h1 class="govuk-heading-xl">Your cases</h1>
+
+
+{{ govukButton({
+  text: "Assess next client",
+  href: "client_details.html"
+}) }}
+
+  {{ mojSubNavigation({
+    label: 'Sub navigation',
+    items: [{
+      text: 'New',
+      href: '#1',
+      active: true
+    }, {
+      text: 'In progress',
+      href: '#2'
+    }, {
+      text: 'Completed',
+      href: '#3'
+    }]
+  }) }}
+
+
+<!-- 
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+       Filter cases
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      WIP
+    </div>
+  </details> -->
+
+ 
+
+    <table class="govuk-table" data-module="moj-sortable-table">
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="0">Reference</button></th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1">Name</button></th>
+
+          <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="2">Date recieved</button></th>
+
+      
+
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="client_details.html" class="govuk-link">PC-4950-9422</a></td>
+
+          <td class="govuk-table__cell">David Johnston</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">Mon 2 Oct 23</td>
+
+        
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">STU-3303</td>
+
+          <td class="govuk-table__cell">Mohammed Khan</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">Mon 2 Oct 23</td>
+
+          
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">STU-3303</td>
+
+          <td class="govuk-table__cell">Mohammed Khan</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">Mon 2 Oct 23</td>
+
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">STU-3303</td>
+
+          <td class="govuk-table__cell">Mohammed Khan</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">Mon 2 Oct 23</td>
+
+          
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">STU-3303</td>
+          <td class="govuk-table__cell">Mohammed Khan</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">Mon 2 Oct 23</td>
+
+          
+        </tr>
+
+
+      </tbody>
+    </table>
+  <div aria-live="polite" role="status" aria-atomic="true" class="govuk-visually-hidden"></div></div>
+
+  {% endblock %}

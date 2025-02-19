@@ -1,0 +1,61 @@
+
+.urgent  {
+    
+    background-color:  	#d4351c;
+    border: 5px solid 	#d4351c;
+
+  }
+
+  .govuk-panel{
+    background-color:	#1d70b8;
+   
+  }
+
+  .summary-box {
+    max-width: 312px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    padding: 15px 10px;
+    page-break-inside: avoid;
+  }
+
+  .summary-box-eligible, .summary-box-not-assessed, .summary-box-contribution-required-and-overall-ineligible {
+    background-color: #f3f2f1;
+}
+
+.summary-box-holder {
+    display: flex
+;
+    align-items: stretch;
+}
+
+#hidden{
+    background-color:red;
+}
+
+.moj-button-menu__toggle-button{
+    background-color:#f3f2f1;
+    color: #000;
+    box-shadow: 0 2px 0 rgb(145.8, 145.2, 144.6);
+}
+
+.moj-button-menu__item{
+    margin-bottom: 1px!important;
+    width: 100%;
+    text-align: left;
+}
+
+.searchpanel {
+  padding: 15px 20px 0px 20px;
+  border-bottom: 1px solid transparent;
+  background-color: #f3f2f1;
+}
+
+.jumplinks{
+  font-weight: 700;
+}
+
+.blueerror{
+  border-left: 5px solid 	#1d70b8;
+}
+

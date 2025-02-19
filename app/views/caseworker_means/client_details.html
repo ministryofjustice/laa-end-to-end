@@ -1,0 +1,401 @@
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Assess client eligibility",
+  serviceUrl: "/",
+  classes: "govuk-header--full-width-border",
+  navigation: [
+    {
+      href: "#1",
+      text: "Caseworker Username",
+      active: true
+    },
+    {
+      href: "#2",
+      text: "Sign out"
+    }
+  ]
+}) }}
+
+  {% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block backlink %}
+
+{{ govukBackLink({
+  text: "Back to cases",
+  href: "/caseworker_means/cases.html"
+}) }}
+
+
+{% endblock%}
+
+
+<!---Name & Case number-->
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-1 govuk-!-margin-top-4">
+  <span class="govuk-caption-xl ">PC-4950-9422</span>
+  David Johnson
+</h1>
+
+{% endblock %}
+{% block content %}
+
+
+{{ mojSubNavigation({
+    label: 'Sub navigation',
+    items: [{
+      text: 'Client details',
+      href: '#1',
+      active: true
+    }, {
+        text: 'Financial eligibility',
+        href: '/caseworker_means/financial_eligibility'
+    }, {
+      text: 'Scope',
+      href: '/caseworker_means/scope'
+    },
+    {
+      text: 'Messages',
+      href: '#4'
+    },
+    {
+      text: 'Evidence',
+      href: '#5'
+    },
+    {
+      text: 'Messages',
+      href: '#5'
+    }
+    ]
+  }) }}
+  
+  
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h2 class="govuk-heading-m">Client details</h2>
+
+  
+     
+<!-- Client details-->
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "About the client"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: data['fullName'] 
+      },
+      actions: {
+        items: [
+          {
+            href: "../../../change_answer/client_details/client_name.html",
+            text: "Change",
+            visuallyHiddenText: "age"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "NI number"
+      },
+      value: {
+        html: data['niNumber'] 
+      },
+      actions: {
+        items: [
+          {
+            href: "../../../change_answer/client_details/client_nino.html",
+            text: "Change",
+            visuallyHiddenText: "nationality"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: data['birthDay'] + " " +  data['birthMonth']  + " "  + data['birthYear']
+      },
+      actions: {
+        items: [
+          {
+            href: "../../../change_answer/client_details/client_dob.html",
+            text: "Change",
+            visuallyHiddenText: "Date of Birth"
+          }
+        ]
+      }
+    },
+    {
+        key: {
+          text: "Urgent"
+        },
+        value: {
+          html: data['urgent'] + "<br>" +  data['urgentReason']
+        },
+        actions: {
+          items: [
+            {
+              href: "../../../change_answer/client_details/client_urgent.html",
+              text: "Change",
+              visuallyHiddenText: "Urgent"
+            }
+          ]
+        }
+      },
+      
+    {
+      key: {
+        text: "Client is vulnerable"
+      },
+      value: {
+        html: data['clientVulnerable'] + "<br>" +  data['clientVulnerableReason']
+      },
+      actions: {
+        items: [
+          {
+            href: "../../../change_answer/contact_details/client_vulnerable.html",
+            text: "Change",
+            visuallyHiddenText: "Client is vulnerable"
+          }
+        ]
+      }
+    }
+
+    
+  ]
+}) }}
+
+<!--Contact-->
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Contact details"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Address"
+      },
+      value: {
+        html: " 5 Green Lane,
+        Birmingham,
+        BR0 203"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "whether details are known"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Phone number"
+      },
+      value: {
+        html: data['phoneNumber'] 
+      },
+      actions: {
+        items: [
+          {
+            href:  "../../../change_answer/contact_details/client_phonenumber.html",
+            text: "Change",
+            visuallyHiddenText: "change phone number"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Accommodations"
+      },
+      value: {
+        html: data['accessNeeds'] 
+      },
+      actions: {
+        items: [
+          {
+            href: "../../../change_answer/contact_details/client_accomodations.html",
+            text: "Change",
+            visuallyHiddenText: "age"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Language"
+      },
+      value: {
+        html: "English"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "working situation"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Additional information"
+      },
+      value: {
+        html: data['clientAdditionalInfo'] 
+      },
+      actions: {
+        items: [
+          {
+            href: "../../../change_answer/contact_details/client_additionalinformation.html",
+            text: "Change",
+            visuallyHiddenText: "working situation"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+<!--Third party contact-->
+
+
+{% if data['thirdParty'] == "Yes" %}
+
+<h2 class="govuk-heading-m">Third party contact</h2>
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Third party contact"
+    },
+    actions: {
+      items: [
+        {
+          href: "../../../change_answer/client_details/client_thirdparty.html",
+          text: "Change",
+          visuallyHiddenText: "Change"
+        },
+        {
+          href: "../../../cases/accepted/case1/clientdetails.html?thirdParty=No",
+          text: "Remove",
+          visuallyHiddenText: "Remove"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: data['thirdPartyName'] 
+      }
+    },
+    {
+      key: {
+        text: "Address"
+      },
+      value: {
+        html: data['thirdPartyAddressLine1'] + "<br>" +  data['thirdPartyAddressLine2'] + "<br>" +  data['thirdPartyTown'] + "<br>" +  data['thirdPartyCounty'] + "<br>" +  data['thirdPartyPostcode']
+      }
+    },
+    {
+      key: {
+        text: "Contact number"
+      },
+      value: {
+        html: data['thirdPartyPhoneNumber'] 
+      }
+    },
+    {
+      key: {
+        text: "Email address"
+      },
+      value: {
+        html: data['thirdPartyEmail'] 
+      }
+    },
+    {
+      key: {
+        text: "Relationship to Client"
+      },
+      value: {
+        html: data['thirdPartyRelationshipToClient'] 
+      }
+    },
+    {
+      key: {
+        text: "Passphrase"
+      },
+      value: {
+        html: data['thirdPartyPassphrase'] 
+      }
+    },
+    {
+      key: {
+        text: "Advisor spoken to client?"
+      },
+      value: {
+        html: data['thirdPartySpokenToClient'] 
+      }
+    },
+    {
+      key: {
+        text: "Contactable for research"
+      },
+      value: {
+        html: data['thirdPartyResearch'] 
+      }
+    }
+  ]
+}) }}
+
+{% else %}
+
+<!--If Third party contact = No, then show button-->
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Add third party contact",
+  classes: "govuk-button--secondary",
+  href: "../../../change_answer/client_details/client_thirdparty.html"
+}) }}
+
+{% endif %}
+
+</div>
+</div>
+
+
+  {% endblock %}
