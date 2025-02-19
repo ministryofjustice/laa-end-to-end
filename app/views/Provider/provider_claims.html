@@ -6,12 +6,12 @@
 {{ govukHeader({
   homepageUrl: "#",
   serviceName: "Manage legal aid cases",
-  serviceUrl: "/v1/home/new",
+  serviceUrl: "/",
   classes: "govuk-header--full-width-border",
   navigation: [
     {
       href: "#1",
-      text: "Username",
+      text: "Provider username",
       active: true
     },
     {
@@ -24,10 +24,18 @@
 
 {{ govukServiceNavigation({
   navigation: [
+  {
+    href: "/Provider/dashboard",
+    text: "Home"
+  },
     {
       href: "/Provider/provider_appointments",
       text: "Appointments"
      
+    },
+    {
+      href: "/Provider/provider_applications",
+      text: "Applications"
     },
     {
       href: "/Provider/provider_cases",

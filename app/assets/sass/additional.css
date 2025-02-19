@@ -59,3 +59,23 @@
   border-left: 5px solid 	#1d70b8;
 }
 
+.quick-dashboard-card__container {
+  display: flex
+;
+  width: 100;
+}
+
+.quick-dashboard-card {
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  flex: 1;
+  border: 1px solid #B1B4B6;
+  border-bottom: 3px solid #6F777B;
+  text-align: center;
+}
+
+.quick-dashboard-card__link {
+  font-size: 3.333em;
+  margin-bottom: 0px;
+}

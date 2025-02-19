@@ -24,10 +24,10 @@
 
 {{ govukServiceNavigation({
   navigation: [
-  {
-    href: "/Provider/dashboard",
-    text: "Home"
-  },
+    {
+      href: "/Provider/dashboard",
+      text: "Home"
+    },
     {
       href: "/Provider/provider_appointments",
       text: "Appointments"
@@ -35,12 +35,12 @@
     },
     {
       href: "/Provider/provider_applications",
-      text: "Applications"
+      text: "Applications",
+      active: true
     },
     {
       href: "/Provider/provider_cases",
-      text: "Cases",
-      active: true
+      text: "Cases"
     },
     {
       href: "/Provider/provider_claims",
@@ -56,20 +56,22 @@
 
   {% block content %}
 
-  <h1 class="govuk-heading-xl">Open cases</h1>
 
-  <details class="govuk-details">
-    <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-       Filter cases
-      </span>
-    </summary>
-    <div class="govuk-details__text">
-      WIP
-    </div>
-  </details>
+  <h1 class="govuk-heading-xl">Applications</h1>
 
- 
+
+  {{ mojSubNavigation({
+    label: 'Sub navigation',
+    items: [{
+      text: 'Submitted',
+      href: '#1',
+      active: true
+    }, {
+      text: 'Rejected',
+      href: '#3'
+    }]
+  }) }}
+
 
     <table class="govuk-table" data-module="moj-sortable-table">
 
@@ -92,9 +94,9 @@
       <tbody class="govuk-table__body">
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"><a href="case_details.html" class="govuk-link">PC-4950-9422</a></td>
+          <td class="govuk-table__cell">STU-3303</td>
 
-          <td class="govuk-table__cell">Mohammed Khan</td>
+          <td class="govuk-table__cell">Hazel Blain</td>
 
           <td class="govuk-table__cell" data-sort-value="4">Mon 2 Oct 23</td>
 
@@ -113,8 +115,8 @@
           <td class="govuk-table__cell" data-sort-value="4">Mon 2 Oct 23</td>
 
           <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="3">
-            <strong class="govuk-tag govuk-tag--blue">
-              In progress
+            <strong class="govuk-tag govuk-tag--red">
+              Requires more evidence
             </strong>
           </td>
         </tr>
@@ -123,7 +125,7 @@
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">STU-3303</td>
 
-          <td class="govuk-table__cell">Mohammed Khan</td>
+          <td class="govuk-table__cell">Joanna Simmons</td>
 
           <td class="govuk-table__cell" data-sort-value="4">Mon 2 Oct 23</td>
 
@@ -162,6 +164,8 @@
             </strong>
           </td>
         </tr>
+
+        
 
 
       </tbody>

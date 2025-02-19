@@ -4,6 +4,29 @@
   Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Manage legal aid cases",
+  serviceUrl: "/",
+  classes: "govuk-header--full-width-border",
+  navigation: [
+    {
+      href: "#1",
+      text: "Provider username",
+      active: true
+    },
+    {
+      href: "#2",
+      text: "Sign out"
+    }
+  ]
+}) }}
+
+  {% endblock %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -23,7 +46,7 @@
       
 
       <p>
-        You can start to work on the case.
+        We'll check your application to see  if your client is entitled to Legal Aid
       </p>
 
       <p class="govuk-body">
