@@ -1,0 +1,108 @@
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Assess client eligibility",
+  serviceUrl: "/",
+  classes: "govuk-header--full-width-border",
+  navigation: [
+    {
+      href: "#1",
+      text: "Caseworker Username",
+      active: true
+    },
+    {
+      href: "#2",
+      text: "Sign out"
+    }
+  ]
+}) }}
+
+  {% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block backlink %}
+
+{{ govukBackLink({
+  text: "Back to cases",
+  href: "/Provider/provider_appointments.html"
+}) }}
+
+
+{% endblock%}
+
+
+<!---Name & Case number-->
+<div><strong class="govuk-tag govuk-!-margin-bottom-0 govuk-!-margin-top-4">New</strong></div>
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-1 govuk-!-margin-top-4">
+  <span class="govuk-caption-xl ">PC-4950-9422</span>
+  David Johnson
+</h1>
+
+{% endblock %}
+{% block content %}
+
+
+{{ mojSubNavigation({
+    label: 'Sub navigation',
+    items: [{
+      text: 'Client details',
+      href: '/caseworker_means/client_details'
+      
+    }, {
+      text: 'Financial eligibility',
+      href: '/caseworker_means/financial_eligiblity_incomplete',
+      active: true
+    }, {
+      text: 'Scope',
+      href: '/caseworker_means/scope'
+    },
+    {
+      text: 'Messages',
+      href: '#4'
+    },
+    {
+      text: 'Evidence',
+      href: '#5'
+    }
+    ]
+  }) }}
+  
+  
+  
+  <div class="">
+    <div class="">
+
+        
+
+        <h2 class="govuk-heading-m">Financial eligibility</h2>
+        
+        <!--if financial eligiblity not started-->
+        
+  
+        
+        
+        
+        
+        <p class="govuk-body-m"> Review the information the client has entered to assess financial eligibility.</p>
+        
+        
+        <form class="form" action="/caseworker_means/CCQ_option1_jumplinks" method="post">
+        
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Check financial eligibility
+          </button>
+        </form>
+        
+  
+        
+
+      
+    </div>
+  </div>
+  {% endblock %}

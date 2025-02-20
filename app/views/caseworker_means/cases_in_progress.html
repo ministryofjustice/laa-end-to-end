@@ -57,11 +57,11 @@
     label: 'Sub navigation',
     items: [{
       text: 'New',
-      href: '#1',
-      active: true
+      href: 'cases.html'
     }, {
       text: 'In progress',
-      href: 'cases_in_progress.html'
+      href: 'cases_in_progress.html',
+      active: true
     }, {
       text: 'Completed',
       href: '#3'
@@ -102,11 +102,11 @@
       <tbody class="govuk-table__body">
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"><a href="client_details.html" class="govuk-link">PC-4950-9422</a></td>
+          <td class="govuk-table__cell"><a href="in_progress/client_details.html" class="govuk-link">PC-4950-9422</a></td>
 
           <td class="govuk-table__cell">David Johnston</td>
 
-          <td class="govuk-table__cell" data-sort-value="4">Mon 2 Oct 25</td>
+          <td class="govuk-table__cell" data-sort-value="4">Fri 30 Sep 25</td>
 
         
         </tr>
@@ -114,30 +114,9 @@
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">STU-3303</td>
 
-          <td class="govuk-table__cell">Mohammed Khan</td>
+          <td class="govuk-table__cell">Pete Miles</td>
 
-          <td class="govuk-table__cell" data-sort-value="4">Mon 2 Oct 25</td>
-
-          
-        </tr>
-
-
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">STU-3303</td>
-
-          <td class="govuk-table__cell">Layla Edwards</td>
-
-          <td class="govuk-table__cell" data-sort-value="4">Mon 2 Oct 25</td>
-
-        </tr>
-
-
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">STU-3303</td>
-
-          <td class="govuk-table__cell">Robert McDonnell</td>
-
-          <td class="govuk-table__cell" data-sort-value="4">Sun 1 Oct 25</td>
+          <td class="govuk-table__cell" data-sort-value="4">Fri 30 Sep 25</td>
 
           
         </tr>
@@ -145,16 +124,108 @@
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">STU-3303</td>
-          <td class="govuk-table__cell">Karen Saliff</td>
 
-          <td class="govuk-table__cell" data-sort-value="4">Sun 1 Oct 25</td>
+          <td class="govuk-table__cell">Theordora Smith-Cline</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">Fri 30 Sep 25</td>
+
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">STU-3303</td>
+
+          <td class="govuk-table__cell">Tanya Donaldson</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">Fri 30 Sep 25</td>
 
           
         </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">STU-3303</td>
+          <td class="govuk-table__cell">Ben Todorov</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">Thu 29 Sep 25</td>
+
+          
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">STU-3303</td>
+          <td class="govuk-table__cell">Breesha Korkill</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">Thu 29 Sep 25</td>
+
+          
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">STU-3303</td>
+          <td class="govuk-table__cell">Gemma Cavandish</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">Thu 29 Sep 25</td>
+
+          
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">STU-3303</td>
+          <td class="govuk-table__cell">Xue Williams</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">Thu 29 Sep 25</td>
+
+          
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">STU-3303</td>
+          <td class="govuk-table__cell">Charlotte Baker</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">Thu 29 Sep 25</td>
+
+          
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">STU-3303</td>
+          <td class="govuk-table__cell">Kirl Alexander</td>
+
+          <td class="govuk-table__cell" data-sort-value="4">Wed 28 Sep 25</td>
+
+          
+        </tr>
+
 
 
       </tbody>
     </table>
+
+    {% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
+{{ govukPagination({
+  next: {
+    href: "#"
+  },
+  items: [
+    {
+      number: 1,
+      current: true,
+      href: "#"
+    },
+    {
+      number: 2,
+      href: "#"
+    },
+    {
+      number: 3,
+      href: "#"
+    }
+  ]
+}) }}
   <div aria-live="polite" role="status" aria-atomic="true" class="govuk-visually-hidden"></div></div>
 
   {% endblock %}
