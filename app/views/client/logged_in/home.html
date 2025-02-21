@@ -1,0 +1,152 @@
+{% extends "layouts/main.html" %}
+
+
+{% block header %}
+  {{ govukOneLoginServiceHeader({
+    serviceName: "Get civil legal aid",
+    navigationItems: [{
+      href: "home.html",
+      text: 'Home',
+      id: 'servicelink1'
+    },{
+      href: "payments.html",
+      text: 'Payments',
+      id: 'servicelink3'
+    },
+    {
+      href: "#",
+      text: 'Messages',
+      id: 'servicelink3'
+    }],
+    activeLinkId: 'servicelink1'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <p class="hmrc-caption govuk-caption-xl"><span class="govuk-visually-hidden">This section is </span>Account home</p>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">David Johnson</h1>
+
+
+    
+<h2 class="govuk-heading-l">Your appointments</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name of organisation
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Landmark Law Centre
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Area of law
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">Debt</p>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Time and date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      9.30am - 10.00am, Monday 1st January 2025
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> time</span>
+      </a>
+    </dd>
+  </div>
+  </dl>
+
+<ul class="govuk-task-list">
+  
+ 
+  
+</ul>
+
+<h2 class="govuk-heading-l">Your applications</h2>
+
+
+<ul class="govuk-task-list">
+<li class="govuk-task-list__item govuk-task-list__item--with-link">
+  <div class="govuk-task-list__name-and-hint">
+    <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-3-hint company-details-3-status">
+      Domestic abuse
+    </a>
+    <div id="company-details-3-hint" class="govuk-task-list__hint">
+      We will contact you to check your eligibility
+    </div>
+  </div>
+  <div class="govuk-task-list__status" id="company-details-3-status">
+    <strong class="govuk-tag govuk-tag--blue">
+      Submitted
+    </strong>
+  </div>
+</li>
+
+
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-3-hint company-details-3-status">
+        Eviction
+      </a>
+      <div id="company-details-3-hint" class="govuk-task-list__hint">
+        You can recieve legal help for this problem
+      </div>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-3-status">
+      <strong class="govuk-tag govuk-tag--green">
+        Approved
+      </strong>
+    </div>
+  </li>
+  
+</ul>
+
+<h3 class="govuk-heading-s">If you have a new legal problem</h3>
+<p>
+<a class="govuk-link" href="#">Check if you can get legal aid</a> to start a new application.
+You’ll be asked general questions about your legal problem and your income and savings. </p>
+
+
+
+</div>
+
+
+
+  <div class="govuk-grid-column-one-third">
+    <aside class="app-related-items" role="complementary">
+
+      <ul class="govuk-list govuk-!-font-size-16">
+        <li>
+          <p> If you need help with using this service </a></p>
+          <div class="contact">
+            <p>Telephone:<br><strong>0300 200 3310</strong></p>
+            <p>Email:<br><strong>civillegalaid@justice.gov.uk</strong></p>
+        </div>
+        </li>
+        <li>
+          <p><a class="govuk-link govuk-body-m" href="#">
+              View guidance on how to use this service</a></p>
+        </li>
+      </ul>
+    </aside>
+  </div>
+</div>
+
+
+
+</div>
+
+
+{% endblock %}
