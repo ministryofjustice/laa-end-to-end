@@ -48,6 +48,16 @@
 {% endblock %}
 {% block content %}
 
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Match to provider"
+  }) }}
+
+  {{ govukButton({
+    text: "Refer to alternative help",
+    classes: "govuk-button--secondary"
+  }) }}
+</div>
 
 {{ mojSubNavigation({
     label: 'Sub navigation',
@@ -57,7 +67,7 @@
       
     }, {
       text: 'Financial eligibility',
-      href: '/caseworker_means/in_progress/financial_eligiblity_completed',
+      href: '/caseworker_means/in_progress/financial_eligibility_completed',
       active: true
     }, {
       text: 'Scope',

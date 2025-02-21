@@ -46,6 +46,16 @@
 {% endblock %}
 {% block content %}
 
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Match to provider"
+  }) }}
+
+  {{ govukButton({
+    text: "Refer to alternative help",
+    classes: "govuk-button--secondary"
+  }) }}
+</div>
 
 {{ mojSubNavigation({
     label: 'Sub navigation',
