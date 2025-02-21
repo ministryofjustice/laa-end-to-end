@@ -1,0 +1,99 @@
+{% extends "layouts/main.html" %}
+
+
+{% block header %}
+
+
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Check if you can get legal aid ",
+  serviceUrl: "/"
+}) }}
+
+{% endblock %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "start.html"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<main class="govuk-main-wrapper" id="main-content" role="main">
+  <h1 class="govuk-heading-xl">Find problems covered by legal aid</h1>
+
+  <div class="govuk-body">
+      <div class="govuk-!-margin-bottom-6">
+          <a href="diagnose_family" class="govuk-link govuk-heading-m">Children, families and relationships</a>
+          <p>Includes children and social services, children in care. Also, help with children and finances if you divorce or split up.</p>
+      </div>
+
+      <div class="govuk-!-margin-bottom-6">
+          <a href="#" class="govuk-link govuk-heading-m">Housing, homelessness, losing your home</a>
+          <p>Includes being evicted or forced to sell your home. Problems with landlords, repairs, neighbours or council housing.</p>
+      </div>
+
+      <div class="govuk-!-margin-bottom-6">
+          <a href="#" class="govuk-link govuk-heading-m">Domestic abuse</a>
+          <p>Includes controlling behaviour, emotional abuse, or if someone is harassing, threatening or hurting you or a child. This could be by a partner, ex-partner, or family member.</p>
+      </div>
+
+      <div class="govuk-!-margin-bottom-6">
+          <a href="#" class="govuk-link govuk-heading-m">Discrimination</a>
+          <p>Treated unfairly because of things like your disability or health condition, race, age, sex, religion or pregnancy.</p>
+      </div>
+
+      <div class="govuk-!-margin-bottom-6">
+          <a href="#" class="govuk-link govuk-heading-m">Asylum and immigration</a>
+          <p>Help if you're seeking asylum. Help to stay in the UK if you experienced domestic abuse.</p>
+      </div>
+
+      <div class="govuk-!-margin-bottom-6">
+          <a href="#" class="govuk-link govuk-heading-m">Special educational needs and disability (SEND)</a>
+          <p>Help if your child has SEND.</p>
+      </div>
+
+      <div class="govuk-!-margin-bottom-6">
+          <a href="#" class="govuk-link govuk-heading-m">Benefits</a>
+          <p>Appeal a decision about your benefits.</p>
+      </div>
+
+      <div class="govuk-!-margin-bottom-6">
+          <a href="#" class="govuk-link govuk-heading-m">Legal action against police and public organisations</a>
+          <p>Includes schools, the police, government, prisons, NHS, the council.</p>
+      </div>
+
+      <div class="govuk-!-margin-bottom-6">
+          <a href="#" class="govuk-link govuk-heading-m">Care needs for disability and old age (social care)</a>
+          <p>Problems with social care. Neglect and bad-quality care. This includes getting care from the council or local authority, paying for care, care homes and other residential homes</p>
+      </div>
+
+      <div class="govuk-!-margin-bottom-6">
+          <a href="#" class="govuk-link govuk-heading-m">Mental capacity, mental health</a>
+          <p>Help if someone cannot make decisions about their health, day-to-day life or care. Help at mental health tribunals.</p>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+      <p class="govuk-heading-m">
+          <a href="#" class="govuk-link">→ More problems covered by legal aid</a>
+      </p>
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+  </div>
+
+  </main>
+  </div>
+  </div>
+</main>
+{% endblock %}
+

@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+
+{% block header %}
+
+
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Check if you can get legal aid ",
+  serviceUrl: "/"
+}) }}
+
+{% endblock %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "diagnose.html"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<main class="govuk-main-wrapper" id="main-content" role="main">
+  <h1 class="govuk-heading-xl">Children, families and relationships</h1>
+
+  <div class="govuk-body">
+      <div class="govuk-!-margin-bottom-6">
+          <a href="legal_aid_available.html" class="govuk-link govuk-heading-m">Children and social services, children in care</a>
+          <p>Help for any problem if social services are involved with a child. Includes children in care, or being adopted. Also special guardianship.</p>
+      </div>
+
+      <div class="govuk-!-margin-bottom-6">
+          <a href="legal_aid_available.html" class="govuk-link govuk-heading-m">Problems with an ex-partner, divorce, when a relationship ends</a>
+          <p>If you cannot agree about money, finances and property. Includes contact with children, where children live, and other child arrangements. If an ex-partner is not doing what they agreed. If you're worried about a child.</p>
+      </div>
+
+      <div class="govuk-!-margin-bottom-6">
+          <a href="legal_aid_available.html" class="govuk-link govuk-heading-m">If there is domestic abuse in your family</a>
+          <p>Making arrangements for children and finances. Also, keeping yourself safe, protecting children and legal help to leave the relationship.</p>
+      </div>
+
+      <div class="govuk-!-margin-bottom-6">
+          <a href="#" class="govuk-link govuk-heading-m">Family mediation</a>
+          <p>Help to cover the costs of family mediation (solve problems about money and children before you go to court).</p>
+      </div>
+
+      <div class="govuk-!-margin-bottom-6">
+          <a href="#" class="govuk-link govuk-heading-m">Child taken without your consent</a>
+          <p>If a child has been abducted (taken without your permission), including outside the UK.</p>
+      </div>
+
+      <h2 class="govuk-heading-m">Other problems</h2>
+
+      <div class="govuk-!-margin-bottom-6">
+          <a href="#" class="govuk-link govuk-heading-m">Children with special educational needs and disabilities (SEND)</a>
+          <p>Get help with a child's SEND.</p>
+      </div>
+
+      <div class="govuk-!-margin-bottom-6">
+          <a href="#" class="govuk-link govuk-heading-m">Schools, colleges, other education settings</a>
+          <p>Advice about legal action against a school. Includes if a child is out of school, exclusions, transport to school, judicial reviews.</p>
+      </div>
+
+      <div class="govuk-!-margin-bottom-6">
+          <a href="#" class="govuk-link govuk-heading-m">Forced marriage</a>
+          <p>Help with forced marriage and Forced Marriage Protection Orders.</p>
+      </div>
+
+      <div class="govuk-inset-text">
+          <h2 class="govuk-heading-m">If you cannot find your problem: children, families, relationships</h2>
+          <p class="govuk-body">
+              <a href="#" class="govuk-link">Next steps to get help</a>
+          </p>
+      </div>
+  </div>
+
+</div>
+</div>
+</main>
+{% endblock %}
+

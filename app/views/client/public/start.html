@@ -1,0 +1,256 @@
+{% extends "layouts/main.html" %}
+
+
+{% block header %}
+
+
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: " ",
+  serviceUrl: "/"
+}) }}
+
+{% endblock %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    },
+    {
+      text: "Crime, justice and the law",
+      href: "#"
+    },
+    {
+      text: "Courts, tribunals and appeals",
+      href: "#"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<main role="main" id="content" class="govuk-main-wrapper ">
+        
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+  <div class="gem-c-heading govuk-!-margin-bottom-8">
+  
+    <h1 class="gem-c-heading__text govuk-heading-xl">
+      Check if you can get legal aid
+  </h1>
+  </div>
+    </div>
+    <div class="article-container group govuk-grid-column-two-thirds">
+      <div class="content-block">
+        <div class="inner">
+          
+  
+    <section class="intro">
+      <div class="get-started-intro">
+        <div data-module="govspeak" class="gem-c-govspeak govuk-govspeak govuk-!-margin-bottom-0" data-govspeak-module-started="true">
+      
+          <p>Legal aid can help pay for legal advice.</p>
+  
+  <p>You’ll be asked general questions about your legal problem and your income and savings. You’ll be told where you can get legal advice.</p>
+  
+
+  
+  
+  </div>    </div>
+
+
+  {{ govukButton({
+    text: "Start now",
+    href: "diagnose.html",
+    isStartButton: true
+  }) }}
+    </section>
+  
+    <section class="more">
+          <div id="before-you-start">
+      
+  <div class="gem-c-heading govuk-!-margin-bottom-4">
+  
+    <h2 class="govuk-heading-m">
+      Before you start
+  </h2>
+  </div>
+      <div data-module="govspeak" class="gem-c-govspeak govuk-govspeak govuk-!-margin-bottom-0" data-govspeak-module-started="true">
+      
+        <p>You can only check for non-criminal (‘civil’) cases. If you’ve been charged with a crime, ask your solicitor or barrister if you’re able to get criminal legal aid.</p>
+  
+  <p>You’ll only get guidance on whether or not you can get legal aid - you will not get a final decision until you speak to an adviser.</p>
+  
+  <p>If you use British Sign Language (BSL), you can <a rel="external" href="https://checklegalaid.service.gov.uk/start-bsl">contact Civil Legal Advice directly to request a BSL call</a> to check if you can get legal aid.</p>
+  
+ 
+  
+  
+  
+  </div>  </div>
+  
+  
+  
+    </section>
+  
+        </div>
+      </div>
+      
+    </div>
+  
+  
+  
+    
+  </div>
+  
+        </main>
+
+{% endblock %}
+
+{% block footer %}
+
+
+<footer data-module="ga4-link-tracker" class="gem-c-layout-footer govuk-footer gem-c-layout-footer--border" data-ga4-link-tracker-module-started="true">
+  <div class="govuk-width-container">
+      <div class="govuk-footer__navigation">
+            <div class="govuk-grid-column-two-thirds govuk-!-display-none-print">
+              <h2 class="govuk-footer__heading govuk-heading-m">Services and information</h2>
+                <ul class="govuk-footer__list govuk-footer__list--columns-2">
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}" href="https://www.gov.uk/browse/benefits">Benefits</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;2&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}" href="https://www.gov.uk/browse/births-deaths-marriages">Births, death, marriages and care</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;3&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}" href="https://www.gov.uk/browse/business">Business and self-employed</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;4&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}" href="https://www.gov.uk/browse/childcare-parenting">Childcare and parenting</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;5&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}" href="https://www.gov.uk/browse/citizenship">Citizenship and living in the UK</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;6&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}" href="https://www.gov.uk/browse/justice">Crime, justice and the law</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;7&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}" href="https://www.gov.uk/browse/disabilities">Disabled people</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;8&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}" href="https://www.gov.uk/browse/driving">Driving and transport</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;9&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}" href="https://www.gov.uk/browse/education">Education and learning</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;10&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}" href="https://www.gov.uk/browse/employing-people">Employing people</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;11&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}" href="https://www.gov.uk/browse/environment-countryside">Environment and countryside</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;12&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}" href="https://www.gov.uk/browse/housing-local-services">Housing and local services</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;13&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}" href="https://www.gov.uk/browse/tax">Money and tax</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;14&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}" href="https://www.gov.uk/browse/abroad">Passports, travel and living abroad</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;15&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}" href="https://www.gov.uk/browse/visas-immigration">Visas and immigration</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;16&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}" href="https://www.gov.uk/browse/working">Working, jobs and pensions</a>
+                      </li>
+                </ul>
+            </div>
+            <div class="govuk-grid-column-one-third govuk-!-display-none-print">
+              <h2 class="govuk-footer__heading govuk-heading-m">Government activity</h2>
+                <ul class="govuk-footer__list govuk-footer__list--columns-1">
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}" href="https://www.gov.uk/government/organisations">Departments</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;2&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}" href="https://www.gov.uk/search/news-and-communications">News</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;3&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}" href="https://www.gov.uk/search/guidance-and-regulation">Guidance and regulation</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;4&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}" href="https://www.gov.uk/search/research-and-statistics">Research and statistics</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;5&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}" href="https://www.gov.uk/search/policy-papers-and-consultations">Policy papers and consultations</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;6&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}" href="https://www.gov.uk/search/transparency-and-freedom-of-information-releases">Transparency</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;7&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}" href="https://www.gov.uk/government/how-government-works">How government works</a>
+                      </li>
+                      <li class="govuk-footer__list-item">
+                        <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;8&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}" href="https://www.gov.uk/government/get-involved">Get involved</a>
+                      </li>
+                </ul>
+            </div>
+      </div>
+
+      <hr class="govuk-footer__section-break govuk-!-display-none-print">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <h2 class="govuk-visually-hidden">Support links</h2>
+          <ul class="govuk-footer__inline-list govuk-!-display-none-print">
+              <li class="govuk-footer__inline-list-item">
+                <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}" href="https://www.gov.uk/help">Help</a>
+              </li>
+              <li class="govuk-footer__inline-list-item">
+                <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;2&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}" href="https://www.gov.uk/help/privacy-notice">Privacy</a>
+              </li>
+              <li class="govuk-footer__inline-list-item">
+                <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;3&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}" href="https://www.gov.uk/help/cookies">Cookies</a>
+              </li>
+              <li class="govuk-footer__inline-list-item">
+                <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;4&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}" href="https://www.gov.uk/help/accessibility-statement">Accessibility statement</a>
+              </li>
+              <li class="govuk-footer__inline-list-item">
+                <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;5&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}" href="https://www.gov.uk/contact">Contact</a>
+              </li>
+              <li class="govuk-footer__inline-list-item">
+                <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;6&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}" href="https://www.gov.uk/help/terms-conditions">Terms and conditions</a>
+              </li>
+              <li class="govuk-footer__inline-list-item">
+                <a class="govuk-footer__link" lang="cy" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;7&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}" href="https://www.gov.uk/cymraeg">Rhestr o Wasanaethau Cymraeg</a>
+              </li>
+              <li class="govuk-footer__inline-list-item">
+                <a class="govuk-footer__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;8&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}" href="https://www.gov.uk/government/organisations/government-digital-service">Government Digital Service</a>
+              </li>
+          </ul>
+          <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">
+            <path fill="currentColor" d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"></path>
+          </svg>
+          <span class="govuk-footer__licence-description" data-ga4-track-links-only="" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;section&quot;:&quot;Licence&quot;,&quot;index_section&quot;:&quot;4&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;text&quot;:&quot;Open Government Licence v3.0&quot;,&quot;index_total&quot;:&quot;1&quot;,&quot;type&quot;:&quot;footer&quot;}">
+            All content is available under the <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated
+          </span>
+      </div>
+      <div class="govuk-footer__meta-item" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;section&quot;:&quot;Copyright&quot;,&quot;index_section&quot;:&quot;5&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;text&quot;:&quot;© Crown copyright&quot;,&quot;index_total&quot;:&quot;1&quot;,&quot;type&quot;:&quot;footer&quot;}">
+        <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">© Crown copyright</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+{% endblock %}

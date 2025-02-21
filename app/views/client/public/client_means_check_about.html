@@ -1,0 +1,274 @@
+{% extends "layouts/main.html" %}
+
+
+{% block header %}
+
+
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Check if you can get legal aid ",
+  serviceUrl: "/"
+}) }}
+
+{% endblock %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "legal_aid_available.html"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<main class="govuk-main-wrapper" id="main-content" role="main">
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-xl">About you</h1>
+
+          <form action="/submit" method="post">
+              <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          Do you have a partner?
+                      </legend>
+                      <div class="govuk-hint">
+                          Your husband, wife, civil partner (unless you have permanently separated) or someone you live with as if you're married
+                      </div>
+                      <div class="govuk-radios">
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="partner-yes" name="partner" type="radio" value="yes">
+                              <label class="govuk-label govuk-radios__label" for="partner-yes">Yes</label>
+                          </div>
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="partner-no" name="partner" type="radio" value="no">
+                              <label class="govuk-label govuk-radios__label" for="partner-no">No</label>
+                          </div>
+                      </div>
+                  </fieldset>
+              </div>
+
+              <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          Do you receive any benefits (including Child Benefit)?
+                      </legend>
+                      <div class="govuk-hint">
+                          Being on some benefits can help you qualify for legal aid
+                      </div>
+                      <div class="govuk-radios">
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="benefits-yes" name="benefits" type="radio" value="yes">
+                              <label class="govuk-label govuk-radios__label" for="benefits-yes">Yes</label>
+                          </div>
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="benefits-no" name="benefits" type="radio" value="no">
+                              <label class="govuk-label govuk-radios__label" for="benefits-no">No</label>
+                          </div>
+                      </div>
+                  </fieldset>
+              </div>
+
+              <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          Do you have any children aged 15 or under?
+                      </legend>
+                      <div class="govuk-hint">
+                          Don't include any children who don't live with you
+                      </div>
+                      <div class="govuk-radios">
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="children-yes" name="children" type="radio" value="yes">
+                              <label class="govuk-label govuk-radios__label" for="children-yes">Yes</label>
+                          </div>
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="children-no" name="children" type="radio" value="no">
+                              <label class="govuk-label govuk-radios__label" for="children-no">No</label>
+                          </div>
+                      </div>
+                  </fieldset>
+              </div>
+
+              <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          Do you have any dependants aged 16 or over?
+                      </legend>
+                      <div class="govuk-hint">
+                          People who you live with and support financially. This could be a young person for whom you get Child Benefit
+                      </div>
+                      <div class="govuk-radios">
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="dependants-yes" name="dependants" type="radio" value="yes">
+                              <label class="govuk-label govuk-radios__label" for="dependants-yes">Yes</label>
+                          </div>
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="dependants-no" name="dependants" type="radio" value="no">
+                              <label class="govuk-label govuk-radios__label" for="dependants-no">No</label>
+                          </div>
+                      </div>
+                  </fieldset>
+              </div>
+
+              <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          Do you own any property?
+                      </legend>
+                      <div class="govuk-hint">
+                          For example, a house, static caravan or flat
+                      </div>
+                      <div class="govuk-radios">
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="property-yes" name="property" type="radio" value="yes">
+                              <label class="govuk-label govuk-radios__label" for="property-yes">Yes</label>
+                          </div>
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="property-no" name="property" type="radio" value="no">
+                              <label class="govuk-label govuk-radios__label" for="property-no">No</label>
+                          </div>
+                      </div>
+                  </fieldset>
+              </div>
+
+              <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          Are you employed?
+                      </legend>
+                      <div class="govuk-hint">
+                          This means working as an employee - you may be both employed and self-employed
+                      </div>
+                      <div class="govuk-radios">
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="employed-yes" name="employed" type="radio" value="yes">
+                              <label class="govuk-label govuk-radios__label" for="employed-yes">Yes</label>
+                          </div>
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="employed-no" name="employed" type="radio" value="no">
+                              <label class="govuk-label govuk-radios__label" for="employed-no">No</label>
+                          </div>
+                      </div>
+                  </fieldset>
+              </div>
+
+              <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          Are you self-employed?
+                      </legend>
+                      <div class="govuk-hint">
+                          This means working for yourself - you may be both employed and self-employed
+                      </div>
+                      <div class="govuk-radios">
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="self-employed-yes" name="self-employed" type="radio" value="yes">
+                              <label class="govuk-label govuk-radios__label" for="self-employed-yes">Yes</label>
+                          </div>
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="self-employed-no" name="self-employed" type="radio" value="no">
+                              <label class="govuk-label govuk-radios__label" for="self-employed-no">No</label>
+                          </div>
+                      </div>
+                  </fieldset>
+              </div>
+
+              <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          Are you or your partner (if you have one) aged 60 or over?
+                      </legend>
+                      <div class="govuk-radios">
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="over-60-yes" name="over-60" type="radio" value="yes">
+                              <label class="govuk-label govuk-radios__label" for="over-60-yes">Yes</label>
+                          </div>
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="over-60-no" name="over-60" type="radio" value="no">
+                              <label class="govuk-label govuk-radios__label" for="over-60-no">No</label>
+                          </div>
+                      </div>
+                  </fieldset>
+              </div>
+
+              <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          Do you have any savings or investments?
+                      </legend>
+                      <div class="govuk-radios">
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="savings-yes" name="savings" type="radio" value="yes">
+                              <label class="govuk-label govuk-radios__label" for="savings-yes">Yes</label>
+                          </div>
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="savings-no" name="savings" type="radio" value="no">
+                              <label class="govuk-label govuk-radios__label" for="savings-no">No</label>
+                          </div>
+                      </div>
+                  </fieldset>
+              </div>
+
+              <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          Do you have any valuable items worth over £500 each?
+                      </legend>
+                      <div class="govuk-radios">
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="valuable-items-yes" name="valuable-items" type="radio" value="yes">
+                              <label class="govuk-label govuk-radios__label" for="valuable-items-yes">Yes</label>
+                          </div>
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="valuable-items-no" name="valuable-items" type="radio" value="no">
+                              <label class="govuk-label govuk-radios__label" for="valuable-items-no">No</label>
+                          </div>
+                      </div>
+                  </fieldset>
+              </div>
+
+              <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">What valuable items should I include?</span>
+                  </summary>
+              </details>
+
+             
+                    {{ govukButton({
+                        text: "Continue",
+                        href: "client_means_check_savings"
+                    }) }}
+
+          </form>
+      </div>
+
+      <div class="govuk-grid-column-one-third" >
+        <aside class="app-related-items" role="complementary">
+    
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <p> If you need help with using this service </a></p>
+              <div class="contact">
+                <p>Telephone:<br><strong>0300 200 3310</strong></p>
+                
+            </div>
+            </li>
+           
+          </ul>
+        </aside>
+      </div>
+    </div>
+    </main>
+    
+    </div>
+  
+
+{% endblock %}
+

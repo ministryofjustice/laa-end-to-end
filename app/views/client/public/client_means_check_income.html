@@ -1,0 +1,219 @@
+{% extends "layouts/main.html" %}
+
+
+{% block header %}
+
+
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Check if you can get legal aid ",
+  serviceUrl: "/"
+}) }}
+
+{% endblock %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "legal_aid_available.html"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Your income and tax</h1>
+  
+        <p class="govuk-body">You'll need to provide evidence of the financial information you've given us through this service.</p>
+        <p class="govuk-body">We only need to know about any money you received last month, even if this varies from month to month.</p>
+  
+        <form class="form" action="#" method="post">
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-m">Wages before tax</h2>
+            <p class="govuk-body">This includes all wages and any earnings from self-employment</p>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <label class="govuk-label" for="wages-amount">Amount</label>
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-10" id="wages-amount" name="wages-amount" type="text">
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <label class="govuk-label" for="wages-frequency">Frequency</label>
+                <select class="govuk-select" id="wages-frequency" name="wages-frequency">
+                  <option value="">-- Please select --</option>
+                </select>
+              </div>
+            </div>
+          </div>
+  
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-m">Income tax</h2>
+            <p class="govuk-body">Tax paid directly out of wages and any tax paid on self-employed earnings</p>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <label class="govuk-label" for="tax-amount">Amount</label>
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-10" id="tax-amount" name="tax-amount" type="text">
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <label class="govuk-label" for="tax-frequency">Frequency</label>
+                <select class="govuk-select" id="tax-frequency" name="tax-frequency">
+                  <option value="">-- Please select --</option>
+                </select>
+              </div>
+            </div>
+          </div>
+  
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-m">National Insurance contributions</h2>
+            <p class="govuk-body">Check the payslip or National Insurance statement if self-employed</p>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <label class="govuk-label" for="ni-amount">Amount</label>
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-10" id="ni-amount" name="ni-amount" type="text">
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <label class="govuk-label" for="ni-frequency">Frequency</label>
+                <select class="govuk-select" id="ni-frequency" name="ni-frequency">
+                  <option value="">-- Please select --</option>
+                </select>
+              </div>
+            </div>
+          </div>
+  
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-m">Working Tax Credit</h2>
+            <p class="govuk-body">Extra money for people who work and have a low income; enter 0 if this doesn't apply to you</p>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <label class="govuk-label" for="wtc-amount">Amount</label>
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-10" id="wtc-amount" name="wtc-amount" type="text">
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <label class="govuk-label" for="wtc-frequency">Frequency</label>
+                <select class="govuk-select" id="wtc-frequency" name="wtc-frequency">
+                  <option value="">-- Please select --</option>
+                </select>
+              </div>
+            </div>
+          </div>
+  
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-m">Maintenance received</h2>
+            <p class="govuk-body">Payments you get from an ex-partner, or enter 0 if this doesn't apply to you</p>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <label class="govuk-label" for="maintenance-amount">Amount</label>
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-10" id="maintenance-amount" name="maintenance-amount" type="text">
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <label class="govuk-label" for="maintenance-frequency">Frequency</label>
+                <select class="govuk-select" id="maintenance-frequency" name="maintenance-frequency">
+                  <option value="">-- Please select --</option>
+                </select>
+              </div>
+            </div>
+          </div>
+  
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-m">Pension received</h2>
+            <p class="govuk-body">Payments you receive if you're retired, enter 0 if this doesn't apply to you</p>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <label class="govuk-label" for="pension-amount">Amount</label>
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-10" id="pension-amount" name="pension-amount" type="text">
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <label class="govuk-label" for="pension-frequency">Frequency</label>
+                <select class="govuk-select" id="pension-frequency" name="pension-frequency">
+                  <option value="">-- Please select --</option>
+                </select>
+              </div>
+            </div>
+          </div>
+  
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-m">Any other income</h2>
+            <p class="govuk-body">For example, student grants, income from trust funds, dividends, or enter 0 if this doesn't apply to you</p>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <label class="govuk-label" for="other-amount">Amount</label>
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-10" id="other-amount" name="other-amount" type="text">
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <label class="govuk-label" for="other-frequency">Frequency</label>
+                <select class="govuk-select" id="other-frequency" name="other-frequency">
+                  <option value="">-- Please select --</option>
+                </select>
+              </div>
+            </div>
+          </div>
+  
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">What payments do not count as income?</span>
+            </summary>
+            <div class="govuk-details__text">
+              Content about payments that do not count as income would go here
+            </div>
+          </details>
+  
+          {{ govukButton({
+            text: "Continue",
+            href: "client_means_check_outgoings"
+        }) }}
+        </form>
+  
+   
+      </div>
+  
+
+  
+  <div class="govuk-grid-column-one-third" >
+    <aside class="app-related-items" role="complementary">
+
+      <ul class="govuk-list govuk-!-font-size-16">
+        <li>
+          <p> If you need help with using this service </a></p>
+          <div class="contact">
+            <p>Telephone:<br><strong>0300 200 3310</strong></p>
+            
+        </div>
+        </li>
+       
+      </ul>
+    </aside>
+  </div>
+</div>
+</main>
+
+</div>
+{% endblock %}
+

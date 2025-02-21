@@ -1,0 +1,316 @@
+{% extends "layouts/main.html" %}
+
+
+{% block header %}
+  {{ govukOneLoginServiceHeader({
+    serviceName: "Get civil legal aid",
+    navigationItems: [{
+      href: "home.html",
+      text: 'Home',
+      id: 'servicelink1'
+    },{
+      href: "payments.html",
+      text: 'Payments',
+      id: 'servicelink3'
+    },
+    {
+      href: "#",
+      text: 'Messages',
+      id: 'servicelink3'
+    }],
+    activeLinkId: 'servicelink1'
+  }) }}
+{% endblock %}
+
+  
+{% block beforeContent%}
+{{ govukBackLink({
+  text: "Back",
+  href: "home.html"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">Your appointment details</h1>
+      
+      <p class="govuk-body">
+        <strong>We’ve matched you with a legal adviser at the Landmark Law Centre.</strong>
+      </p>
+      <p class="govuk-body">
+         This organisation is industry-regulated and contracted by the government to provide legal aid.
+      </p>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            About Landmark Law Centre
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">
+            The Landmark Law centre is part of the Law Centre Network. It was established in 1982. With a staff of 18 solicitors and legal advisers, Landmark Law Centre provides legal advice at all levels and takes cases to the highest courts.
+          </p>
+          
+        </div>
+
+      </details>
+
+      
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name of organisation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Landmark Law Centre
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Area of law
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">Family</p>
+          </dd>
+        </div>
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Day
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['date']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/{{version}}/CLA-request-advice-accordion?returnto=CLA-check-answers">
+              Change<span class="govuk-visually-hidden"> day</span>
+            </a>
+          </dd>
+        </div> -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Time and date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            9.30am - 10.00am
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/{{version}}/CLA-request-advice-accordion?returnto=CLA-check-answers">
+              Change<span class="govuk-visually-hidden"> time</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      
+
+      <h2 class="govuk-heading-l">Your language requirements</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+        {% if data['lang'] == 'Interpreter' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Language
+          </dt>
+          <dd class="govuk-summary-list__value">
+            English
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/{{version}}/CLA-language-requirements?returnto=CLA-check-answers">
+              Change<span class="govuk-visually-hidden"> Language</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Interpreter needed
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/{{version}}/CLA-language-requirements?returnto=CLA-check-answers">
+              Change<span class="govuk-visually-hidden"> Interpreter needed</span>
+            </a>
+          </dd>
+        </div>
+
+        {% else %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Language
+          </dt>
+          <dd class="govuk-summary-list__value">
+            English
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/{{version}}/CLA-language-requirements?returnto=CLA-check-answers">
+              Change<span class="govuk-visually-hidden"> Language</span>
+            </a>
+          </dd>
+        </div>
+
+        {% endif %}
+
+      </dl>
+
+
+            <h2 class="govuk-heading-l">How the legal advisor should contact you</h2>
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Safe to call your phone
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Yes
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/{{version}}/CLA-reasonable-adjustments-alt?returnto=CLA-check-answers">
+                    Change<span class="govuk-visually-hidden"> Safe to call your phone</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Safe to leave a voicemail or message on your phone
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  No
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/{{version}}/CLA-reasonable-adjustments-alt?returnto=CLA-check-answers">
+                    Change<span class="govuk-visually-hidden"> Safe to leave a voicemail or message on your phone</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Safe to use your email address
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  No
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/{{version}}/CLA-reasonable-adjustments-alt?returnto=CLA-check-answers">
+                    Change<span class="govuk-visually-hidden"> Safe to use your email address</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Safe to call your phone but only at the appointment time
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  No
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/{{version}}/CLA-reasonable-adjustments-alt?returnto=CLA-check-answers">
+                    Change<span class="govuk-visually-hidden"> Safe to call your phone but only at the appointment time/span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  You will call the legal adviser for your appointment
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Yes
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/{{version}}/CLA-reasonable-adjustments-alt?returnto=CLA-check-answers">
+                    Change<span class="govuk-visually-hidden"> You will call the legal adviser for your appointment</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Call a different number for your appointment
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  No
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/{{version}}/CLA-reasonable-adjustments-alt?returnto=CLA-check-answers">
+                    Change<span class="govuk-visually-hidden"> Call a different number for your appointment</span>
+                  </a>
+                </dd>
+              </div>
+
+            </dl>
+
+      
+
+      <h2 class="govuk-heading-l">Your accessibility needs</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      
+       
+             
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            No accessibility needs
+          </dt>
+          <dd class="govuk-summary-list__value">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/CLA-reasonable-adjustments?returnto=CLA-check-answers">
+              Change<span class="govuk-visually-hidden"> No accessibility needs</span>
+            </a>
+          </dd>
+        </div>
+       
+
+      </dl>
+
+      <h2 class="govuk-heading-l">Your contact details</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            davidjohnson@hotmail.co.uk
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/{{version}}/CLA-your-contact-details?returnto=CLA-check-answers">
+              Change<span class="govuk-visually-hidden"> email address</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Phone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            09530 055983
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/{{version}}/CLA-your-contact-details?returnto=CLA-check-answers">
+              Change<span class="govuk-visually-hidden"> telephone number</span>
+            </a>
+          </dd>
+        </div>
+
+
+      </dl>
+
+    </div>
+  </div>
+{% endblock %}

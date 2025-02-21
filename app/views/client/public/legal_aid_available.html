@@ -1,0 +1,82 @@
+{% extends "layouts/main.html" %}
+
+
+{% block header %}
+
+
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Check if you can get legal aid ",
+  serviceUrl: "/"
+}) }}
+
+{% endblock %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "diagnose.html"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+
+    <h1 class="govuk-heading-xl">
+      Legal aid is available for this type of problem
+    </h1>
+    <p class="govuk-body-l">
+      
+        However, you must also qualify financially.
+      
+    </p>
+    <p class="govuk-body">
+      If you do qualify financially, a caseworker will check all the information you’ve given through this service.
+      
+    </p>
+    <p class="govuk-body">
+        Then they will match you to a legal aid provider who will provide legal help.
+    </p>
+    <h2 class="govuk-heading-m">
+      What you need to check if you qualify financially
+    </h2>
+    <p class="govuk-body">You and your partner (if you have one) will need:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>recent payslips (if you’re working) and bank statements</li>
+      <li>a summary of your income tax and National Insurance contributions</li>
+      <li>details of any savings and investments you have</li>
+      <li>details of any benefits you receive</li>
+      <li>mortgage statements and a current valuation for any property you own</li>
+    </ul>
+  
+    <h3 class="govuk-heading-s">
+      If you use British Sign Language (BSL)
+    </h3>
+    <p class="govuk-body">You can choose not to complete the financial assessment online, and instead ask for a call with a BSL interpreter.</p>
+    <p class="govuk-body">
+      Fill in the '<a class="govuk-link" href="/contact">Contact CLA</a>' page. Select 'BSL' under 'Communication needs'.
+    </p>
+  
+   
+
+    {{ govukButton({
+        text: "Check if you qualify financially",
+        href: "client_means_check_about",
+        isStartButton: true
+      }) }}
+  
+   
+    </main>
+  
+    </div>
+</div>
+{% endblock %}
+
