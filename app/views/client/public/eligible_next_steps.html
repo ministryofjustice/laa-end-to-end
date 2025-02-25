@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+
+{% block header %}
+
+
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Check if you can get legal aid ",
+  serviceUrl: "/"
+}) }}
+
+{% endblock %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "client_means_check_review.html"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+
+    <h1 class="govuk-heading-xl">
+      You are likely to be eligible for legal aid
+    </h1>
+    <p class="govuk-body-l">
+      
+        
+      
+    </p>
+    <p class="govuk-body">
+      To decide whether you might qualify for legal aid, we need more information about your financial circumstances.
+      
+      <p>A caseworker will need contact you to discuss your circumstances and determine your eligibility.</p>
+      <p>You’ll need to provide evidence of the financial information you’ve given us through this service.</p>
+
+      <p>Then they will match you to a legal aid provider who will provide legal help.</p>
+     
+      <p>In some cases, you may need to pay a contribution towards your legal aid.</p>
+
+
+
+      <h2 class="govuk-heading-m"> Continue with GOV.UK One Login</h2>  
+
+  <p>Create an account or sign in with GOV.UK One Login to submit your details. We will contact you to confirm your eligibility.</p>
+
+      {{ govukButton({
+        text: "Continue with GOV.UK One Login",
+        href: "one_login"
+        }) }}
+
+        <h2 class="govuk-heading-m"> Alternative ways to continue </h2>  
+
+ <h2 class="govuk-heading-s"> Call us on the phone (charges apply)</h2>
+
+ <p> You can call <strong>0300 200 3310 </strong> to continue your application.  </p>
+
+ <p> If you choose to continue by telephone, your reference number is <strong> GJ3492 </strong> </p>
+
+ <h2 class="govuk-heading-s"> Ask us to call you back (free) </h2>
+
+ <p> Provide your contact details and we will call you back.</p>
+
+ {% from "govuk/components/button/macro.njk" import govukButton %}
+
+ {{ govukButton({
+   text: "Provide contact details",
+   classes: "govuk-button--secondary"
+ }) }}
+
+
+      
+  
+   
+
+    </main>
+  
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+
+{% block header %}
+
+
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Check if you can get legal aid ",
+  serviceUrl: "/"
+}) }}
+
+{% endblock %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "one_login.html"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<main class="govuk-main-wrapper" id="main-content">
+          
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/page-index/authentication/sign-in/create-password" method="post">
+
+      
+
+
+<div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--l" for="sign-in-email">
+      Enter your email address to sign in to your GOV.UK One Login
+    </label>
+  </h1>
+
+
+  <input class="govuk-input" id="sign-in-email" name="sign-in-email" type="email" spellcheck="false" autocomplete="email">
+
+</div>
+
+{{ govukButton({
+  text: "   Continue",
+  href: "one_login_enter_password"
+  }) }}
+
+
+      </form>
+
+    </div>
+  </div>
+
+
+        </main>
+{% endblock %}
+

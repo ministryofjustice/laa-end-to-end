@@ -1,0 +1,377 @@
+{% extends "layouts/main.html" %}
+
+
+{% block header %}
+
+
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Check if you can get legal aid ",
+  serviceUrl: "/"
+}) }}
+
+{% endblock %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "client_means_check_outgoings.html"
+}) }}
+
+{% endblock %}
+
+{% block content %}<div class="govuk-width-container">
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+    <div class="govuk-width-container">
+     
+      
+     
+  
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-xl">Review your answers</h1>
+          
+          <!-- Problem area section -->
+          <h2 class="govuk-heading-l">Your problem area</h2>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What do you need help with?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Children and social services, children in care
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> what you need help with</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+             
+            </div>
+          </dl>
+          
+          <!-- About you section -->
+          <h2 class="govuk-heading-l">About you</h2>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you have a partner?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                No
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> if you have a partner</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you receive any benefits (including Child Benefit)?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                No
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> if you receive any benefits</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you have any children aged 15 or under?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                No
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> if you have any children aged 15 or under</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you have any dependants aged 16 or over?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                No
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> if you have any dependants aged 16 or over</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you have any savings or investments?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> if you have any savings or investments</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you have any valuable items worth over £500 each?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                No
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> if you have any valuable items worth over £500 each</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you own any property?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                No
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> if you own any property</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Are you employed?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> if you are employed</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Are you self-employed?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                No
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> if you are self-employed</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Are you or your partner (if you have one) aged 60 or over?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                No
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> if you or your partner are aged 60 or over</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+          
+          <!-- Your savings section -->
+          <h2 class="govuk-heading-l">Your savings</h2>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Savings
+              </dt>
+              <dd class="govuk-summary-list__value">
+                £500.00
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> your savings amount</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Investments
+              </dt>
+              <dd class="govuk-summary-list__value">
+                £32.00
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> your investments amount</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+          
+          <!-- Your income and tax section -->
+          <h2 class="govuk-heading-l">Your income and tax</h2>
+          <h3 class="govuk-heading-m">Your personal income</h3>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Wages before tax
+              </dt>
+              <dd class="govuk-summary-list__value">
+                £1,200.00 (per month)
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> your wages before tax</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Income tax
+              </dt>
+              <dd class="govuk-summary-list__value">
+                £100.00 (per month)
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> your income tax</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                National Insurance contributions
+              </dt>
+              <dd class="govuk-summary-list__value">
+                £38.00 (per month)
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> your National Insurance contributions</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Working Tax Credit
+              </dt>
+              <dd class="govuk-summary-list__value">
+                £0
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> your Working Tax Credit</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Maintenance received
+              </dt>
+              <dd class="govuk-summary-list__value">
+                £0
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> your maintenance received</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Pension received
+              </dt>
+              <dd class="govuk-summary-list__value">
+                £0
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> your pension received</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Any other income
+              </dt>
+              <dd class="govuk-summary-list__value">
+                £0
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> your other income</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+          
+          <!-- Your outgoings section -->
+          <h2 class="govuk-heading-l">Your outgoings</h2>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Rent
+              </dt>
+              <dd class="govuk-summary-list__value">
+                £600.00 (per month)
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> your rent</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Maintenance
+              </dt>
+              <dd class="govuk-summary-list__value">
+                £0
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> your maintenance</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Monthly Income Contribution Order
+              </dt>
+              <dd class="govuk-summary-list__value">
+                £0
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> your Monthly Income Contribution Order</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+          
+          {{ govukButton({
+            text: "Submit",
+            href: "eligible_next_steps"
+        }) }}
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}
+

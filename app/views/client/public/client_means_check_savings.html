@@ -20,7 +20,7 @@
 
 {{ govukBackLink({
   text: "Back",
-  href: "legal_aid_available.html"
+  href: "client_means_check_about.html"
 }) }}
 
 {% endblock %}
@@ -40,7 +40,7 @@
             <label class="govuk-label" for="savings">
               <h2 class="govuk-heading-m">Savings</h2>
             </label>
-            <p class="govuk-body">The total amount of savings in cash, bank or building society; or enter 0 if you have none</p>
+            <p class="govuk-body govuk-hint">The total amount of savings in cash, bank or building society; or enter 0 if you have none</p>
             <div class="govuk-input__wrapper">
               <div class="govuk-input__prefix" aria-hidden="true">£</div>
               <input class="govuk-input govuk-input--width-10" id="savings" name="savings" type="text">
@@ -59,7 +59,7 @@
             <label class="govuk-label" for="investments">
               <h2 class="govuk-heading-m">Investments</h2>
             </label>
-            <p class="govuk-body">This includes stocks, shares, bonds (but not property); enter 0 if you have none</p>
+            <p class="govuk-body govuk-hint">This includes stocks, shares, bonds (but not property); enter 0 if you have none</p>
             <div class="govuk-input__wrapper">
               <div class="govuk-input__prefix" aria-hidden="true">£</div>
               <input class="govuk-input govuk-input--width-10" id="investments" name="investments" type="text">
@@ -70,7 +70,7 @@
             <label class="govuk-label" for="valuable-items">
               <h2 class="govuk-heading-m">Total value of items worth over £500 each</h2>
             </label>
-            <p class="govuk-body">See below for examples of what valuable items to include</p>
+            <p class="govuk-body govuk-hint">See below for examples of what valuable items to include</p>
             <div class="govuk-input__wrapper">
               <div class="govuk-input__prefix" aria-hidden="true">£</div>
               <input class="govuk-input govuk-input--width-10" id="valuable-items" name="valuable-items" type="text">
