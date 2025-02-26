@@ -30,29 +30,30 @@
     <div class="govuk-grid-column-two-thirds">
   <main class="govuk-main-wrapper" id="main-content" role="main">
 
-    <h1 class="govuk-heading-xl">
-      You are likely to be eligible for legal aid
-    </h1>
+    {{ govukPanel({
+      titleText: "You are likely to be eligible for legal aid"
+      
+    }) }}
     <p class="govuk-body-l">
       
         
       
     </p>
     <p class="govuk-body">
-      To decide whether you might qualify for legal aid, we need more information about your financial circumstances.
+
+      <h2 class="govuk-heading-m"> What happens next</h2>
+
+
+      <p>To decide whether you might qualify for legal aid, we need more information about your financial circumstances.</p>
       
       <p>A caseworker will need contact you to discuss your circumstances and determine your eligibility.</p>
       <p>You’ll need to provide evidence of the financial information you’ve given us through this service.</p>
 
       <p>Then they will match you to a legal aid provider who will provide legal help.</p>
      
-      <p>In some cases, you may need to pay a contribution towards your legal aid.</p>
-
-
-
       <h2 class="govuk-heading-m"> Continue with GOV.UK One Login</h2>  
 
-  <p>Create an account or sign in with GOV.UK One Login to submit your details. We will contact you to confirm your eligibility.</p>
+  <p>Create an account or sign in with GOV.UK One Login to submit your contact details. We will contact you to confirm your eligibility.</p>
 
       {{ govukButton({
         text: "Continue with GOV.UK One Login",
