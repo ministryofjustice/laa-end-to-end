@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Assess client eligibility",
+  serviceUrl: "/",
+  classes: "govuk-header--full-width-border",
+  navigation: [
+    {
+      href: "#1",
+      text: "Caseworker Username",
+      active: true
+    },
+    {
+      href: "#2",
+      text: "Sign out"
+    }
+  ]
+}) }}
+
+  {% endblock %}
+
+
+
+
+{% block beforeContent %}
+{% block backlink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/caseworker_means/in_progress/client_details.html"
+}) }}
+
+
+{% endblock%}
+
+{% endblock%}
+
+
+
+
+
+
+  
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {{ govukPanel({
+      titleText: "Appointment booked",
+      html: "10.30am, Thu 5 Feb 2025"
+    }) }}
+
+    <p class="govuk-body">We have sent the client a confirmation email.</p>
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+    <p class="govuk-body">
+      The client will have the merits of their case assessed by the provider.
+    </p>
+    <p class="govuk-body">
+      They can manage their appointment by logging into their legal aid account.
+    </p>
+
+    <p><a href="cases">Back to cases</a></p>
+
+  </div>
+</div>
+{% endblock %}
+

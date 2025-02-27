@@ -1,0 +1,279 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Assess client eligibility",
+  serviceUrl: "/",
+  classes: "govuk-header--full-width-border",
+  navigation: [
+    {
+      href: "#1",
+      text: "Caseworker Username",
+      active: true
+    },
+    {
+      href: "#2",
+      text: "Sign out"
+    }
+  ]
+}) }}
+
+  {% endblock %}
+
+
+
+
+{% block beforeContent %}
+{% block backlink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/caseworker_means/in_progress/client_details.html"
+}) }}
+
+
+{% endblock%}
+
+{% endblock%}
+
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Select an appointment for client
+      </h1>
+
+
+      <p class="govuk-body">
+        <strong>We’ve matched the client with Landmark Law Centre.</strong>
+      </p>
+
+      <p class="govuk-body">
+        This is a remote appointment, usually by phone. It will take around 40 minutes.
+        <br>
+       <br>
+        The advisor can call the client at any point within the time slot you select. 
+
+
+      </p>
+
+
+      <form class="form" action="/{{ version }}/CLA-language-requirements" method="post">
+
+      <input class="govuk-input govuk-input--width-5" id="" name="returnto" type="hidden" value="">
+
+        <h2 id="contact-option" class="govuk-heading-m">
+          Choose a day and time
+        </h2>
+
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h3 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                  Today
+                  <p> 4 time slots available</p>
+                </span>
+                
+              </h3>
+              
+            </div>
+            <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+              
+              
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                 
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="whatTime" name="whatTime" type="radio" value="9.00am - 9.30am, Monday 1st January 2024">
+                      <label class="govuk-label govuk-radios__label" for="whatTime">
+                        9.00am - 9.30am
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="whatTime-2" name="whatTime" type="radio" value="9.30am - 10.00am, Monday 1st January 2024">
+                      <label class="govuk-label govuk-radios__label" for="whatTime-2">
+                        9.30am - 10.00am
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="whatTime-3" name="whatTime" type="radio" value="10.00am - 10.30am, Monday 1st January 2024">
+                      <label class="govuk-label govuk-radios__label" for="whatTime-3">
+                        10.00am - 10.30am
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="whatTime-4" name="whatTime" type="radio" value="10.30am - 11.00am, Monday 1st January 2024">
+                      <label class="govuk-label govuk-radios__label" for="whatTime-4">
+                        10.30am - 11.00am
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              
+
+            </div>
+          </div>
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h3 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                 Tuesday 2nd January
+                  <p> 2 time slots available</p>
+                </span>
+              </h3>
+            </div>
+            <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+              
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                 
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="whatTime" name="whatTime" type="radio" value="10.30am - 11.00am, Tuesday 2nd January 2024">
+                      <label class="govuk-label govuk-radios__label" for="whatTime">
+                        10.30am - 11.00am
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="whatTime-2" name="whatTime" type="radio" value="11.30am - 12.00am, Tuesday 2nd January 2024">
+                      <label class="govuk-label govuk-radios__label" for="whatTime-2">
+                        11.30am - 12.00am
+                      </label>
+                    </div>
+                  
+                  </div>
+                </fieldset>
+              </div>
+              
+            </div>
+          </div>
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h3 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                  Wednesday 3rd January
+                  <p> 4 time slots available</p>
+                </span>
+              </h3>
+            </div>
+            <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                 
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="whatTime" name="whatTime" type="radio" value="10.30am - 11.00am, Wednesday 3rd January 2024">
+                      <label class="govuk-label govuk-radios__label" for="whatTime">
+                        10.30am - 11.00am
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="whatTime-2" name="whatTime" type="radio" value="11.30am - 12.00am, Wednesday 3rd January 2024">
+                      <label class="govuk-label govuk-radios__label" for="whatTime-2">
+                        11.30am - 12.00am
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="whatTime-3" name="whatTime" type="radio" value="2.00pm - 2.30pm, Wednesday 3rd January 2024">
+                      <label class="govuk-label govuk-radios__label" for="whatTime-3">
+                        2.00pm - 2.30pm
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="whatTime-4" name="whatTime" type="radio" value="4.00pm - 4.30pm, Wednesday 3rd January 2024">
+                      <label class="govuk-label govuk-radios__label" for="whatTime-4">
+                        4.00pm - 4.30pm
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h3 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                  Thursday 4th January
+                  <p> 6 time slots available</p>
+                </span>
+              </h3>
+            </div>
+            <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                 
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="whatTime" name="whatTime" type="radio" value="10.30am - 11.00am, Thursday 4th January 2024">
+                      <label class="govuk-label govuk-radios__label" for="whatTime">
+                        10.30am - 11.00am
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="whatTime-2" name="whatTime" type="radio" value="11.30am - 12.00am, Thursday 4th January 2024">
+                      <label class="govuk-label govuk-radios__label" for="whatTime-2">
+                        11.30am - 12.00am
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="whatTime-3" name="whatTime" type="radio" value="2.00pm - 2.30pm, Thursday 4th January 2024">
+                      <label class="govuk-label govuk-radios__label" for="whatTime-3">
+                        2.00pm - 2.30pm
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="whatTime-4" name="whatTime" type="radio" value="4.00pm - 4.30pm, Thursday 4th January 2024">
+                      <label class="govuk-label govuk-radios__label" for="whatTime-4">
+                        4.00pm - 4.30pm
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="whatTime-4" name="whatTime" type="radio" value="4.30pm - 5.00pm, Thursday 4th January 2024">
+                      <label class="govuk-label govuk-radios__label" for="whatTime-4">
+                        4.30pm - 5.00pm
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="whatTime-4" name="whatTime" type="radio" value="5.00pm - 5.30pm, Thursday 4th January 2024">
+                      <label class="govuk-label govuk-radios__label" for="whatTime-4">
+                        5.00pm - 5.30pm
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+
+     
+
+
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue",
+            href: "appointment_confirmation"
+          }) }}
+        
+          {{ govukButton({
+            text: "Find a different provider",
+            classes: "govuk-button--secondary"
+          }) }}
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
