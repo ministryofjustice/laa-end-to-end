@@ -4,5 +4,11 @@
 //
 
 window.GOVUKPrototypeKit.documentReady(() => {
-  // Add JavaScript here
+  if(typeof MOJFrontend.MultiFileUpload !== 'undefined') {
+    new MOJFrontend.MultiFileUpload({
+      container: document.querySelector('.moj-multi-file-upload'),
+      uploadUrl: '/ajax-upload-url',
+      deleteUrl: '/ajax-delete-url'
+    });
+  }
 })

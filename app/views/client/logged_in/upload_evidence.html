@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukOneLoginServiceHeader({
+    serviceName: "Get civil legal aid",
+    navigationItems: [{
+      href: "home.html",
+      text: 'Home',
+      id: 'servicelink1'
+    },{
+      href: "payments.html",
+      text: 'Payments',
+      id: 'servicelink3'
+    },
+    {
+      href: "#",
+      text: 'Messages',
+      id: 'servicelink3'
+    }],
+    activeLinkId: 'servicelink1'
+  }) }}
+{% endblock %}
+
+  
+{% block beforeContent%}
+{{ govukBackLink({
+  text: "Back",
+  href: "home.html"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<main class="govuk-main-wrapper" id="main-content" role="main">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Upload evidence of employment income</h1>
+        
+        <p class="govuk-body">Use this page to provide evidence of your income.</p>
+        
+        <h2 class="govuk-heading-s">Accepted:</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>most recent payslip(s)</li>
+        </ul>
+        
+        <h2 class="govuk-heading-s">Not accepted</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>bank statements</li>
+        </ul>
+        
+        <form class="govuk-form" method="post" enctype="multipart/form-data">
+          <form action="/components/multi-file-upload/examples/default" method="post" enctype="multipart/form-data">
+
+            <div class="moj-multi-file-upload">
+              <div class="moj-multi-file__uploaded-files ">
+                <h2 class="govuk-heading-m">Files added</h2>
+                <div class="govuk-summary-list moj-multi-file-upload__list">
+      
+                </div>
+              </div>
+      
+              <div class="moj-multi-file-upload__upload">
+      
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-label--m" for="documents">
+                    Upload a file
+                  </label>
+      
+                  <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
+      
+                </div>
+      
+                <button type="submit" class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
+                  Upload file
+                </button>
+      
+              </div>
+            </div>
+      
+          </form>
+          
+          <div class="govuk-button-group">
+            <button class="govuk-button govuk-button--primary" data-module="govuk-button" type="submit">
+              Submit evidence
+            </button>
+            <a href="home.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Save and come back later
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  
+</main>
+{% endblock %}

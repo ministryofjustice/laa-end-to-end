@@ -1,3 +1,4 @@
+@import "node_modules/@ministryofjustice/frontend/moj/all";
 
 .urgent  {
     
@@ -78,4 +79,14 @@
 .quick-dashboard-card__link {
   font-size: 3.333em;
   margin-bottom: 0px;
+}
+
+
+.moj-multi-file-upload__dropzone {
+  display: flex
+;
+  outline: 3px dashed #0b0c0c;
+  padding: 60px 15px;
+  text-align: center;
+  transition: outline-offset .1sease-in-out, background-color .1slinear;
 }
