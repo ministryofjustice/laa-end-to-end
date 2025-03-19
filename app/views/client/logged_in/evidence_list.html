@@ -1,0 +1,125 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukOneLoginServiceHeader({
+    serviceName: "Get civil legal aid",
+    navigationItems: [{
+      href: "home.html",
+      text: 'Home',
+      id: 'servicelink1'
+    },{
+      href: "payments.html",
+      text: 'Payments',
+      id: 'servicelink3'
+    },
+    {
+      href: "#",
+      text: 'Messages',
+      id: 'servicelink3'
+    }],
+    activeLinkId: 'servicelink1'
+  }) }}
+{% endblock %}
+
+  
+{% block beforeContent%}
+{{ govukBackLink({
+  text: "Back",
+  href: "track_case.html"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<main class="govuk-main-wrapper" id="main-content">
+          
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Manage evidence
+      </h1>
+
+      <ul class="govuk-task-list">
+
+
+    <li class="govuk-task-list__item govuk-task-list__item--with-link">
+      <div class="govuk-task-list__name-and-hint">
+        <a class="govuk-link govuk-task-list__link" href="upload_evidence" aria-describedby="company-details-1-status">
+          Employment income
+        </a>
+
+      </div>
+      <div class="govuk-task-list__status" id="company-details-1-status">
+      <strong class="govuk-tag govuk-tag--blue">
+        Not started
+      </strong>
+      </div>
+    </li>
+
+
+        
+        
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-1-status">
+              Partner's employment income
+            </a>
+
+          </div>
+          <div class="govuk-task-list__status" id="company-details-1-status">
+            Completed
+          </div>
+        </li>
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-1-status">
+              Money in bank accounts
+            </a>
+      
+          </div>
+          <div class="govuk-task-list__status" id="company-details-1-status">
+            Completed
+          </div>
+        </li>
+
+       
+        <!-- <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="witness-statement" aria-describedby="company-details-3-hint company-details-3-status">
+              Witness Statement
+            </a>
+     
+          </div>
+          <div class="govuk-task-list__status" id="company-details-3-status">
+            Completed
+          </div>
+        </li> -->
+ 
+      </ul>
+
+
+
+   
+      <a class="govuk-button govuk-!-margin-bottom-9" href="upload_evidence">Add evidence</a>
+
+ 
+   
+      
+<h2 class="govuk-heading-m govuk-!-margin-top-5">Need help?</h2>
+<p>If you've got a question about the service, <a href="#">contact us</a>.</p>      
+
+
+
+    </div>
+  </div>
+
+
+        </main>
+
+{% endblock %}

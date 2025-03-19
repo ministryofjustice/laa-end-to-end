@@ -1,0 +1,152 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{{ govukOneLoginServiceHeader({
+serviceName: "Get civil legal aid",
+navigationItems: [{
+href: "home.html",
+text: 'Home',
+id: 'servicelink1'
+},{
+href: "payments.html",
+text: 'Payments',
+id: 'servicelink3'
+},
+{
+href: "#",
+text: 'Messages',
+id: 'servicelink3'
+}],
+activeLinkId: 'servicelink1'
+}) }}
+{% endblock %}
+
+
+{% block beforeContent%}
+{{ govukBackLink({
+text: "Back",
+href: "home.html"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<main class="govuk-main-wrapper" id="main-content">
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
+
+      <h1 class="govuk-heading-xl govuk-!-static-margin-bottom-5">Track your application</h1>
+
+
+      <p class="govuk-body govuk-!-margin-bottom-0">Category of law: <strong>Housing</strong></p>
+      <p class="govuk-body govuk-!-margin-bottom-3">Reference number: <strong>11109876543211</strong></p>
+
+    </div>
+  </div>
+
+
+
+  <div class="govuk-grid-column-three-thirds">
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-one-third">
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              View updates on your case </h2>
+
+
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+
+
+                <p>Get updates from case workers.</p>
+
+                <p><a href="#">View updates</a> </p>
+
+
+
+
+
+              </div>
+            </dl>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <div class="govuk-grid-column-one-third">
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+
+
+            <h2 class="govuk-summary-card__title">
+              Manage evidence</h2>
+
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <p>Upload and view evidence for this application</p>
+                <p><a href="evidence_list">Manage evidence </a>
+                <span id="notifications" class="moj-notification-badge blue">1</span></p>
+              </div>
+            </dl>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">View your application</h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <p>View your submitted application</p>
+                <p><a href="#">View application</a></p>
+
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+
+    </div>
+
+
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m govuk-!-static-padding-top-5">Need help?</h2>
+      <p>If you've got a question about the service, <a href="#">contact us</a>.</p>
+    </div>
+
+  </div>
+
+
+</main>
+{% endblock %}
