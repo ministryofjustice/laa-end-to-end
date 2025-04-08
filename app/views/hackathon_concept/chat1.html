@@ -1,0 +1,131 @@
+{% extends "layouts/main.html" %}
+
+
+
+{% block header %}
+  {{ govukOneLoginServiceHeader({
+    serviceName: "Get civil legal aid",
+    navigationItems: [{
+      href: "home.html",
+      text: 'Home',
+      id: 'servicelink1'
+    },{
+      href: "payments.html",
+      text: 'Payments',
+      id: 'servicelink3'
+    },
+    {
+      href: "#",
+      text: 'Messages',
+      id: 'servicelink3'
+    }]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "start.html"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<head>
+  <title>Legal aid Chat - Experimental</title>
+  
+  <style>
+    
+    .app-notification-banner {
+      background-color: #ffdd00;
+      padding: 10px 0;
+      margin-bottom: 20px;
+    }
+    
+    .app-chat-container {
+      max-width: 1230px;
+      margin: 0 auto;
+      padding: 20px 15px;
+    }
+    
+    .app-chat-message {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    
+    .app-chat-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #1d70b8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    
+    .app-chat-content {
+      background-color: #f3f2f1;
+      padding: 15px;
+      border-radius: 5px;
+      max-width: 85%;
+    }
+    
+    .app-chat-content p {
+      margin: 0 0 15px 0;
+    }
+    
+    .app-chat-content p:last-child {
+      margin-bottom: 0;
+    }
+
+  </style>
+</head>
+
+
+<h1 class=" govuk-heading-xl">
+  Check if you can get legal aid
+</h1>
+  
+
+  
+
+  <div class="app-chat-container">
+    <div class="app-chat-message">
+      <div class="app-chat-avatar">
+        🤖
+      </div>
+      <div class="app-chat-content">
+        <p>Hello I'm Legal aid chat.</p>
+        <p>I'm an experimental tool that uses AI to answer questions and help you find out if you are eligible for legal aid.</p>
+        <p>At the end of the conversation I will give you a provisional result, then you can choose whether to make a legal aid application or not.</p>
+      </div>
+    </div>
+
+    <div class="app-chat-message">
+      <div class="app-chat-avatar">
+        🤖
+      </div>
+      <div class="app-chat-content">
+        <p>To get started, what is your age?</p>
+    
+      </div>
+    </div>
+
+   
+
+    <div class="govuk-form-group" style="margin-top: 40px;">
+      <textarea class="govuk-textarea" id="message" name="message" rows="5" aria-label="Message" placeholder="Message"></textarea>
+    </div>
+    
+    {{ govukButton({
+      text: "Send",
+      href: "chat2.html"
+    }) }}
+  </div>
+
+{% endblock %}

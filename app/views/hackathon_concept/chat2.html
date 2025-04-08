@@ -1,0 +1,405 @@
+{% extends "layouts/main.html" %}
+
+
+
+{% block header %}
+  {{ govukOneLoginServiceHeader({
+    serviceName: "Get civil legal aid",
+    navigationItems: [{
+      href: "home.html",
+      text: 'Home',
+      id: 'servicelink1'
+    },{
+      href: "payments.html",
+      text: 'Payments',
+      id: 'servicelink3'
+    },
+    {
+      href: "#",
+      text: 'Messages',
+      id: 'servicelink3'
+    }]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "interaction_choice.html"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<head>
+
+  <style>
+    
+  
+    
+    .app-chat-container {
+      max-width: 1230px;
+      margin: 0 auto;
+      padding: 90px 15px 100px 15px; /* Adjusted padding to account for fixed header and footer */
+      height: calc(50vh - 190px); /* Adjusted height calculation */
+      overflow-y: auto; /* This makes the chat messages scrollable */
+    }
+    
+    .app-chat-message {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    
+    .app-chat-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #1d70b8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    
+    .app-chat-content {
+      background-color: #f3f2f1;
+      padding: 15px;
+      border-radius: 5px;
+      max-width: 85%;
+    }
+    
+    .app-chat-content p {
+      margin: 0 0 15px 0;
+    }
+    
+    .app-chat-content p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .app-footer-buttons {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid #b1b4b6;
+      z-index: 10;
+    }
+    
+    .app-footer-button {
+      flex: 1;
+      text-align: center;
+      padding: 15px;
+      font-weight: bold;
+      font-size: 19px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .app-primary-button {
+      background-color: #1d70b8;
+      color: white;
+    }
+    
+    .app-secondary-button {
+      background-color: #f3f2f1;
+      color: #0b0c0c;
+    }
+    
+    .highlight {
+      background-color: #1d70b8;
+      color: white;
+      padding: 0 3px;
+    }
+    
+    /* For demonstration purposes, added more chat messages */
+    .app-chat-message.user .app-chat-content {
+      background-color: #e6f0f9;
+    }
+    
+    scroll{
+      margin: 0;
+      padding: 0;
+      height: 60vh;
+      overflow: hidden; /* Prevents double scrollbars */
+    }
+  </style>
+</head>
+
+
+<h1 class=" govuk-heading-xl">
+  Check if you can get legal aid
+</h1>
+  
+<body class="govuk-template__body scroll">
+  
+  <div class="app-chat-container">
+    <div class="app-chat-message">
+      <div class="app-chat-avatar">
+       🤖
+      </div>
+      <div class="app-chat-content">
+        <p>Now, let’s talk about your income. Are you currently working?</p>
+      </div>
+    </div>
+
+    <div class="app-chat-message user">
+      <div class="app-chat-avatar" style="background-color:#ebeb19">
+        👤
+      </div>
+      <div class="app-chat-content">
+        <p>No, I'm unemployed</p>
+      </div>
+    </div>
+    
+    <div class="app-chat-message">
+      <div class="app-chat-avatar">
+       🤖
+      </div>
+      <div class="app-chat-content">
+        <p> Since you are not working, are you claiming universal credit? </p>
+      </div>
+    </div>
+    
+    <div class="app-chat-message user">
+      <div class="app-chat-avatar" style="background-color: #ebeb19">
+        👤
+      </div>
+      <div class="app-chat-content">
+        <p>No</p>
+      </div>
+    </div>
+
+    <div class="app-chat-message">
+      <div class="app-chat-avatar">
+       🤖
+      </div>
+      <div class="app-chat-content">
+        <p> Do you recieve any money from other sources? Such as student finance, pensions, friends, family or a lodger? </p>
+      </div>
+    </div>
+
+    <div class="app-chat-message user">
+      <div class="app-chat-avatar" style="background-color:#ebeb19;">
+        👤
+      </div>
+      <div class="app-chat-content">
+        <p>my lodger gives me 320 pound for rent</p>
+      </div>
+    </div>
+
+    <div class="app-chat-message">
+      <div class="app-chat-avatar">
+       🤖
+      </div>
+      <div class="app-chat-content">
+        <p> Is that £320 a month? </p>
+      </div>
+    </div>
+
+    <div class="app-chat-message user">
+      <div class="app-chat-avatar" style="background-color: #ebeb19;">
+        👤
+      </div>
+      <div class="app-chat-content">
+        <p>Yes</p>
+      </div>
+    </div>
+
+    <div class="app-chat-message">
+      <div class="app-chat-avatar">
+       🤖
+      </div>
+      <div class="app-chat-content">
+        <p> I have enough information now to give you your result, please check the answers below first</p>
+      </div>
+    </div>
+
+    
+    
+    <div class="app-chat-message">
+      <div class="app-chat-avatar">
+       🤖
+      </div>
+      <div class="app-chat-content">
+        <section class="govuk-!-margin-bottom-6">
+          <h2 class="govuk-heading-m">Your Details</h2>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Age</dt>
+              <dd class="govuk-summary-list__value">26</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Receiving passporting benefits</dt>
+              <dd class="govuk-summary-list__value">Yes</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Dependent children</dt>
+              <dd class="govuk-summary-list__value">None</dd>
+            </div>
+          </dl>
+        </section>
+  
+        <section class="govuk-!-margin-bottom-6">
+          <h2 class="govuk-heading-m">Case Details</h2>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Case type</dt>
+              <dd class="govuk-summary-list__value">Civil (possession of home / eviction)</dd>
+            </div>
+          </dl>
+        </section>
+  
+        <section class="govuk-!-margin-bottom-6">
+          <h2 class="govuk-heading-m">Income </h2>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Employed</dt>
+              <dd class="govuk-summary-list__value">No</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Self-employed</dt>
+              <dd class="govuk-summary-list__value">No</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Benefits</dt>
+              <dd class="govuk-summary-list__value">No </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Other income</dt>
+              <dd class="govuk-summary-list__value">Yes, lodger pays £320 a month</dd>
+            </div>
+          </dl>
+        </section>
+  
+        <section class="govuk-!-margin-bottom-6">
+          <h2 class="govuk-heading-m">Outgoings</h2>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Childcare or maintenance payments</dt>
+              <dd class="govuk-summary-list__value">No</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Rent or mortgage payments</dt>
+              <dd class="govuk-summary-list__value">£560 per month</dd>
+            </div>
+          </dl>
+        </section>
+  
+        <section class="govuk-!-margin-bottom-6">
+          <h2 class="govuk-heading-m">Housing and Property</h2>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Homeowner</dt>
+              <dd class="govuk-summary-list__value">Yes,  mortgage</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Value of home</dt>
+              <dd class="govuk-summary-list__value">£110,000.00</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Owns other property</dt>
+              <dd class="govuk-summary-list__value">No</dd>
+            </div>
+          </dl>
+        </section>
+  
+        <section class="govuk-!-margin-bottom-6">
+          <h2 class="govuk-heading-m">Assets</h2>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Savings and investments</dt>
+              <dd class="govuk-summary-list__value">£0.00</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Valuable items</dt>
+              <dd class="govuk-summary-list__value">No</dd>
+            </div>
+          </dl>
+        </section>
+  
+       
+      </div>
+
+      
+    </div>
+
+    <div class="app-chat-message">
+      <div class="app-chat-avatar">
+       🤖
+      </div>
+      <div class="app-chat-content">
+        <p>Is the above information correct?</p>
+      </div>
+    </div>
+
+    <div class="app-chat-message user">
+      <div class="app-chat-avatar" style="background-color: #ebeb19;">
+        👤
+      </div>
+      <div class="app-chat-content">
+        <p>Yes thats right</p>
+      </div>
+    </div>
+
+
+    <div class="app-chat-message">
+      <div class="app-chat-avatar">
+       🤖
+      </div>
+      <div class="app-chat-content">
+        <section class="govuk-panel govuk-panel--confirmation">
+          <h2 class="govuk-panel__title">Conclusion: You are likely eligible for Legal Aid</h2>
+          <div class="govuk-panel__body">
+          
+          
+          </div>
+        </section>
+
+        <p class="govuk-panel-body">Based on your answers, you are likely to be eligible for legal aid.</p>
+
+        <p class="govuk-body">Final eligibility depends on the full calculation from the Legal Aid Agency.</p>
+
+           <p class="govuk-heading-m"> Do you want to continue to a full application?</p> 
+
+           <div class="govuk-button-group">
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Apply for legal aid
+            </button>
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Save result for later
+            </button>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="govuk-form-group" style="margin-top: 40px;">
+    <textarea class="govuk-textarea" id="message" name="message" rows="5" aria-label="Message" placeholder="Message"></textarea>
+  </div>
+  
+  <button type="submit" class="govuk-button" data-module="govuk-button" style="margin-top: 10px;">
+    Send
+  </button>
+</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/govuk-frontend/4.7.0/govuk-frontend.min.js"></script>
+  <script>
+    window.GOVUKFrontend.initAll()
+    
+    // Automatically scroll to the bottom of the chat container when the page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      const chatContainer = document.querySelector('.app-chat-container');
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    });
+  </script>
+</body>
+{% endblock %}

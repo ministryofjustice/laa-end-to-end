@@ -1,0 +1,102 @@
+{% extends "layouts/main.html" %}
+
+
+{% block header %}
+  {{ govukOneLoginServiceHeader({
+    serviceName: "Get civil legal aid",
+    navigationItems: [{
+      href: "home.html",
+      text: 'Home',
+      id: 'servicelink1'
+    },{
+      href: "payments.html",
+      text: 'Payments',
+      id: 'servicelink3'
+    },
+    {
+      href: "#",
+      text: 'Messages',
+      id: 'servicelink3'
+    }]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<main role="main" id="content" class="govuk-main-wrapper ">
+        
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+  <div class="gem-c-heading govuk-!-margin-bottom-8">
+  
+    <h1 class=" govuk-heading-xl">
+      Check if you can get legal aid
+  </h1>
+  </div>
+    </div>
+    <div class="article-container group govuk-grid-column-two-thirds">
+      <div class="content-block">
+        <div class="inner">
+          
+  
+    <section class="intro">
+      <div class="get-started-intro">
+        <div data-module="govspeak" class="gem-c-govspeak govuk-govspeak govuk-!-margin-bottom-0" data-govspeak-module-started="true">
+      
+          <p>Legal aid can help pay for legal advice.</p>
+  
+  <p>You’ll be asked general questions about your legal problem and your income and savings. You’ll be told where you can get legal advice.</p>
+  
+
+  
+  
+  </div>    </div>
+
+
+  {{ govukButton({
+    text: "Start now",
+    href: "interaction_choice.html",
+    isStartButton: true
+  }) }}
+    </section>
+  
+    <section class="more">
+          <div id="before-you-start">
+      
+  <div class="gem-c-heading govuk-!-margin-bottom-4">
+  
+    <h2 class="govuk-heading-m">
+      Before you start
+  </h2>
+  </div>
+      <div data-module="govspeak" class="gem-c-govspeak govuk-govspeak govuk-!-margin-bottom-0" data-govspeak-module-started="true">
+      
+  
+  <p>You’ll only get guidance on whether or not you can get legal aid - you will not get a final decision until a caseworker looks at your case.</p>
+  
+  
+ 
+  
+  
+  
+  </div>  </div>
+  
+  
+  
+    </section>
+  
+        </div>
+      </div>
+      
+    </div>
+  
+  
+  
+    
+  </div>
+  
+        </main>
+
+
+{% endblock %}

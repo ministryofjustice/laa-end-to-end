@@ -1,0 +1,82 @@
+{% extends "layouts/main.html" %}
+
+
+
+{% block header %}
+  {{ govukOneLoginServiceHeader({
+    serviceName: "Get civil legal aid",
+    navigationItems: [{
+      href: "home.html",
+      text: 'Home',
+      id: 'servicelink1'
+    },{
+      href: "payments.html",
+      text: 'Payments',
+      id: 'servicelink3'
+    },
+    {
+      href: "#",
+      text: 'Messages',
+      id: 'servicelink3'
+    }]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "start.html"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<main role="main" id="content" class="govuk-main-wrapper ">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+        How do you want to tell us about your legal problem and financial situation?
+      </h1>
+    </legend>
+    <div id="signIn-hint" class="govuk-hint">
+      Both options have the end result assessed by a human caseworker.
+    </div>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+        <label class="govuk-label govuk-radios__label" for="signIn">
+          Talk to a Chatbot
+        </label>
+        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+          You’ll be asked questions by Chatbot in a more informal way and you'll be able to ask for clarfication.
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
+        <label class="govuk-label govuk-radios__label" for="signIn-2">
+          Fill in a form
+        </label>
+        <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+          You can complete the same set of questions using a form.
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+{{ govukButton({
+  text: "Save and continue",
+  href: "chat1.html"
+}) }}
+</main>
+</div>
+</div>
+ 
+
+{% endblock %}
