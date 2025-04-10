@@ -122,10 +122,11 @@
       <textarea class="govuk-textarea" id="message" name="message" rows="5" aria-label="Message" placeholder="Message"></textarea>
     </div>
     
-    {{ govukButton({
-      text: "Send",
-      href: "chat2.html"
-    }) }}
+    <a href="chat2.html"
+    <button type="submit" class="govuk-button"  style="background-color:	#1d70b8"  data-module="govuk-button" style="margin-top: 10px;">
+      Send
+    </button>
+  </a>
   </div>
 
 {% endblock %}
